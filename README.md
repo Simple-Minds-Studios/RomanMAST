@@ -36,11 +36,9 @@ Scientific claims, estimates, and proposed workflows should be independently rev
 
 ## Rights and Use
 
-This is a **source-visible, all-rights-reserved** project. It is not released under the MIT License.
+The root [LICENSE](LICENSE) includes MIT and CC BY 4.0 terms, with copyright credited to Bart Salazar and Brad Devowe. Apply the appropriate license to the material used and preserve its required notices and attribution. Earlier grants, third-party licenses, and legal exceptions remain in effect. Conflicting generic repository-standard notices do not narrow those permissions.
 
-Public access permits viewing, discussion, citation, and evaluation subject to applicable law. It does not grant permission to reproduce, redistribute, adapt, commercialize, train AI systems on, or create derivative works from the repository.
-
-See [`repository-standard/LICENSE`](repository-standard/LICENSE), [`COPYRIGHT.md`](repository-standard/COPYRIGHT.md), [`AI_POLICY.md`](repository-standard/AI_POLICY.md), and [`ATTRIBUTION.md`](repository-standard/ATTRIBUTION.md).
+See [Rights and Attribution](RIGHTS_AND_ATTRIBUTION.md) for licensing scope and preferred credit for adaptations. Preferred public credit adds no restriction to MIT; Creative Commons material retains the attribution and other requirements of its applicable license.
 
 ## Attribution
 
