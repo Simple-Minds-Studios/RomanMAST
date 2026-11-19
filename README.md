@@ -28,6 +28,10 @@ Long-baseline and high-cadence light curves intended to improve temporal complet
 
 Microlensing is fundamentally time-integrated. No single observation or archive contains every quantity needed to constrain lens mass, distance, and velocity. Connecting historical surveys with Roman-era observations could make archival data an active component of discovery rather than passive storage.
 
+## Public data examples
+
+Runnable [Python examples](examples/public_data/README.md) retrieve historical OGLE, KMTNet and Spitzer samples. The same-event mode records the documented OGLE-2016-BLG-1190 / KMT-2016-BLG-0113 association, explicit time offsets and source checksums. See the [source inventory](docs/RomanMAST_data_sources_2026-11-19.md) for data formats, provider policies and validation status.
+
 ## Project Status
 
 This repository presents a **community-authored research concept and infrastructure proposal**. It is not an official NASA, STScI, MAST, Roman mission, OGLE, KMTNet, Gaia, or Spitzer publication, endorsement, or data release.
