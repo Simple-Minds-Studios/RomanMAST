@@ -1,0 +1,45 @@
+{
+  "canonical_event_id": "OGLE-2016-BLG-1190",
+  "aliases": [
+    "KMT-2016-BLG-0113",
+    "OB161190",
+    "MOA-2016-BLG-383"
+  ],
+  "evidence_checked_date": "2026-11-19",
+  "cross_reference_url": "https://kmtnet.kasi.re.kr/ulens/event/2016/view.php?event=KMT-2016-BLG-0113",
+  "ogle_event_url": "https://ogle.astrouw.edu.pl/ogle4/ews/2016/blg-1190.html",
+  "coordinate_separation_arcsec": 0.2665794802,
+  "ogle_j2000": [
+    "17:58:52.30",
+    "-27:36:48.8"
+  ],
+  "kmtnet_j2000": [
+    "17:58:52.32",
+    "-27:36:48.82"
+  ],
+  "event_identity_basis": "Catalog cross-reference OB161190, supported by coordinate proximity",
+  "time_convention": "Full HJD after explicit origin offset; detailed time scale unspecified",
+  "photometry_status": "Online OGLE/KMTNet samples plus published Spitzer reduction; no cross-calibration or physical fit performed. Published Spitzer magnitude zero point/alignment unspecified in member.",
+  "model_metadata": {
+    "ogle_tau_days": 8.021,
+    "kmtnet_t_E_days": 199.96,
+    "status": "Preliminary catalog estimates conflict; preserve provider and model context"
+  },
+  "reduction_context": "Ryu et al. report re-reduced OGLE photometry differs from the original online reduction",
+  "reference_paper_url": "https://research-repository.st-andrews.ac.uk/bitstream/10023/12621/1/Ryu_2017AJ_SpitzerBulge_AAM.pdf",
+  "collection_profile": "trifecta",
+  "required_providers": [
+    "ogle",
+    "kmtnet",
+    "spitzer"
+  ],
+  "spitzer_identity_basis": "KMTNet paper archive explicitly groups KMT-2016-BLG-0113/OGLE-2016-BLG-1190/MOA-2016-BLG-383 and lists Spitzer L photometry",
+  "published_archive_page": "https://kmtnet.kasi.re.kr/ulens/kmtnet_data_archive/webpages/Ryu_et_al_2018_AJ_155_40.html",
+  "paper_doi": "10.3847/1538-3881/aa9be4",
+  "acknowledgements_url": "https://kmtnet.kasi.re.kr/ulens/kmtnet_data_archive/webpages/acknowledgments.html",
+  "download_status": {
+    "ogle": "downloaded_sample_not_scientifically_validated",
+    "kmtnet": "downloaded_sample_not_scientifically_validated",
+    "spitzer": "downloaded_sample_not_scientifically_validated"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "canonical_event_id": "OGLE-2016-BLG-1190",
+  "measurements": 10560,
+  "providers": [
+    "ogle",
+    "kmtnet",
+    "spitzer"
+  ],
+  "normalized_csv_sha256": "b6883538521520241aaeb9eb07c9a2b28e9fbcdd4c4474756c96b4ea0c3d36d0",
+  "normalized_csv_bytes": 3244972,
+  "measurement_files_committed": false,
+  "reproduce": "python3 examples/public_data/romanmast_public_ingest_starter.py --trifecta --output /tmp/lensbridge-trifecta",
+  "scope": "Three selected source/reduction sets; not every available exposure, calibrated photometry or a fitted physical model."
+}

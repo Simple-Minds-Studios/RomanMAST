@@ -1,0 +1,57 @@
+[
+  {
+    "provider": "ogle",
+    "event_id": "OGLE-2016-BLG-1190",
+    "canonical_event_id": "OGLE-2016-BLG-1190",
+    "time_origin": 0.0,
+    "url": "https://www.astrouw.edu.pl/ogle/ogle4/ews/2016/blg-1190/phot.dat",
+    "retrieved_utc": "2026-11-19T19:54:48.096102+00:00",
+    "sha256": "eddacf19c752bd630cc90a58a2ea51da0d96bb463138f94a66da5f96433c6279",
+    "records": 8801,
+    "bytes": 334812,
+    "notes": "OGLE EWS I-band photometry. Publication usage requires communication with OGLE.",
+    "status": "downloaded_sample_not_scientifically_validated",
+    "hjd_range": [
+      2455260.86264,
+      2457691.50351
+    ]
+  },
+  {
+    "provider": "kmtnet",
+    "event_id": "KMT-2016-BLG-0113",
+    "canonical_event_id": "OGLE-2016-BLG-1190",
+    "time_origin": 2450000.0,
+    "url": "https://kmtnet.kasi.re.kr/ulens/event/2016/data/KB160113/pysis/KMTC03_I.pysis",
+    "retrieved_utc": "2026-11-19T19:54:53.926826+00:00",
+    "sha256": "e6059e803fb45cb13d1fdc63e0860dd59b8f2bf8d77b428cf4840dd2a1524bc9",
+    "records": 1745,
+    "bytes": 132679,
+    "notes": "KMTC03 I-band pySIS. Time offset verified against 2016 event epoch; instrumental flux scale retained.",
+    "status": "downloaded_sample_not_scientifically_validated",
+    "hjd_range": [
+      2457439.84326,
+      2457680.5397
+    ]
+  },
+  {
+    "provider": "spitzer",
+    "event_id": "OGLE-2016-BLG-1190",
+    "canonical_event_id": "OGLE-2016-BLG-1190",
+    "time_origin": 2450000.0,
+    "url": "https://kmtnet.kasi.re.kr/ulens/kmtnet_data_archive/data_tarballs/Ryu_et_al_2018_AJ_155_40_data.tar.gz",
+    "retrieved_utc": "2026-11-19T19:55:07.593105+00:00",
+    "sha256": "fa61fdf815abbd8061653968c29a5316b3812d46a45c5a5b68eeef192f44f241",
+    "records": 14,
+    "bytes": 434,
+    "notes": "Ryu et al. 2018 AJ 155 40 published Spitzer L-band subset (14 rows), hosted by KMTNet. Distinct reduction from online survey samples; preserve published values. Cite original paper and contributor acknowledgements.",
+    "status": "downloaded_sample_not_scientifically_validated",
+    "hjd_range": [
+      2457578.897072,
+      2457595.07662
+    ],
+    "archive_member": "I_Spitzer_L.dat",
+    "download_sha256": "e3e4444da1be09f8b3704df24c3ed1a31d2164cdd8fe7fa4e4e4e08b1fc78490",
+    "download_bytes": 509393,
+    "photometric_scale": "Published magnitude column; zero point/alignment unspecified in archive member. Not assumed to be native calibrated IRAC magnitudes."
+  }
+]

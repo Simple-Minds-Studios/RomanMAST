@@ -5,9 +5,10 @@ import csv
 import hashlib
 import io
 import json
+import tarfile
 from pathlib import Path
 from statistics import median
-from romanmast_public_ingest_starter import SOURCES, PAIR_SOURCES, PAIR_MATCH, FIELDS, parse_source
+from romanmast_public_ingest_starter import SOURCES, PAIR_SOURCES, PAIR_MATCH, TRIFECTA_SOURCES, TRIFECTA_MATCH, FIELDS, parse_source, source_payload
 
 
 def validate(directory):
@@ -15,10 +16,11 @@ def validate(directory):
     errors, warnings, summaries = [], [], {}
     manifest = json.loads((directory / "ingestion_manifest.json").read_text())
     pair = (directory / "event_match.json").exists()
-    sources = PAIR_SOURCES if pair else SOURCES
+    match = json.loads((directory / "event_match.json").read_text()) if pair else {}
+    triple = match.get("collection_profile") == "trifecta"
+    sources = TRIFECTA_SOURCES if triple else (PAIR_SOURCES if pair else SOURCES)
     if pair:
-        match = json.loads((directory / "event_match.json").read_text())
-        for key, value in PAIR_MATCH.items():
+        for key, value in (TRIFECTA_MATCH if triple else PAIR_MATCH).items():
             if match.get(key) != value:
                 errors.append(f"event identity metadata differs: {key}")
     with (directory / "lightcurve_samples_normalized.csv").open(newline="") as handle:
@@ -39,6 +41,16 @@ def validate(directory):
             continue
         raw = (directory / f"{provider}_source.txt").read_bytes()
         source = sources[provider]
+        if "archive_member" in source:
+            download = (directory / f"{provider}_download.tar.gz").read_bytes()
+            if source_payload(download, source) != raw:
+                errors.append(f"{provider}: extracted member differs from saved source")
+            for key, value in {"archive_member": source["archive_member"],
+                               "download_sha256": hashlib.sha256(download).hexdigest(),
+                               "download_bytes": len(download),
+                               "photometric_scale": source["photometric_scale"]}.items():
+                if item.get(key) != value:
+                    errors.append(f"{provider}: manifest mismatch: {key}")
         rows = parse_source(provider, raw.decode("utf-8"), sources)
         for key, value in {"sha256": hashlib.sha256(raw).hexdigest(),
                            "bytes": len(raw), "records": len(rows),
@@ -64,8 +76,8 @@ def validate(directory):
         expected.extend(rows)
     if not seen:
         errors.append("empty source manifest")
-    if pair and seen != set(PAIR_SOURCES):
-        errors.append("event pair is incomplete")
+    if pair and seen != set(sources):
+        errors.append("trifecta is incomplete" if triple else "event pair is incomplete")
     buffer = io.StringIO(newline="")
     writer = csv.DictWriter(buffer, fieldnames=FIELDS)
     writer.writeheader()
@@ -74,7 +86,7 @@ def validate(directory):
     if actual != list(csv.DictReader(buffer)):
         errors.append("normalized measurements differ from reparsed source bytes")
     overlap = None
-    if pair and set(summaries) == set(PAIR_SOURCES):
+    if pair and set(summaries) == set(sources):
         start = max(s["hjd_range"][0] for s in summaries.values())
         end = min(s["hjd_range"][1] for s in summaries.values())
         overlap = {"hjd_start": start, "hjd_end": end,
@@ -92,7 +104,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     try:
         report = validate(args.directory)
-    except (OSError, ValueError, KeyError, TypeError, csv.Error) as exc:
+    except (OSError, ValueError, KeyError, TypeError, csv.Error, tarfile.TarError) as exc:
         report = {"integrity_passed": False, "errors": [str(exc)]}
     output = json.dumps(report, indent=2, allow_nan=False)
     if args.report:

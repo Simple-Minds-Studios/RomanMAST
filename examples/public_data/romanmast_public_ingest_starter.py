@@ -3,7 +3,8 @@
 
 Downloads sample observations and preserves their source fields in a CSV.
 The default provider samples have separate event identities. The --event-pair
-option selects the documented OGLE/KMTNet counterpart pair.
+option selects the documented OGLE/KMTNet counterpart pair. The --trifecta
+option adds the same event’s published Spitzer photometry.
 
 Not affiliated with NASA, STScI, KASI, OGLE or Spitzer. Read each source's data
 policy before use, publication, redistribution, or bulk ingestion.
@@ -12,6 +13,7 @@ Usage:
   python romanmast_public_ingest_starter.py --source all
   python romanmast_public_ingest_starter.py --source ogle --output output_demo
   python romanmast_public_ingest_starter.py --event-pair --output same_event_demo
+  python romanmast_public_ingest_starter.py --trifecta --output trifecta_demo
 
 The event-pair mode uses the catalog cross-reference linking
 KMT-2016-BLG-0113 to OGLE-2016-BLG-1190. It explicitly adds 2450000
@@ -27,6 +29,7 @@ import hashlib
 import io
 import json
 import math
+import tarfile
 from pathlib import Path
 from urllib.request import Request, urlopen
 
@@ -87,6 +90,46 @@ PAIR_MATCH = {
     "reference_paper_url": "https://research-repository.st-andrews.ac.uk/bitstream/10023/12621/1/Ryu_2017AJ_SpitzerBulge_AAM.pdf",
 }
 
+TRIFECTA_SOURCES = {
+    **PAIR_SOURCES,
+    "spitzer": {
+        "event_id": "OGLE-2016-BLG-1190",
+        "canonical_event_id": "OGLE-2016-BLG-1190",
+        "url": "https://kmtnet.kasi.re.kr/ulens/kmtnet_data_archive/data_tarballs/Ryu_et_al_2018_AJ_155_40_data.tar.gz",
+        "archive_member": "I_Spitzer_L.dat",
+        "cols": ("hjd_minus_2450000", "magnitude", "magnitude_error"),
+        "time_origin": 2450000.0,
+        "flux_unit": "",
+        "photometric_scale": "Published magnitude column; zero point/alignment unspecified in archive member. Not assumed to be native calibrated IRAC magnitudes.",
+        "notes": "Ryu et al. 2018 AJ 155 40 published Spitzer L-band subset (14 rows), hosted by KMTNet. Distinct reduction from online survey samples; preserve published values. Cite original paper and contributor acknowledgements.",
+    },
+}
+TRIFECTA_MATCH = {
+    **PAIR_MATCH,
+    "collection_profile": "trifecta",
+    "required_providers": ["ogle", "kmtnet", "spitzer"],
+    "spitzer_identity_basis": "KMTNet paper archive explicitly groups KMT-2016-BLG-0113/OGLE-2016-BLG-1190/MOA-2016-BLG-383 and lists Spitzer L photometry",
+    "published_archive_page": "https://kmtnet.kasi.re.kr/ulens/kmtnet_data_archive/webpages/Ryu_et_al_2018_AJ_155_40.html",
+    "paper_doi": "10.3847/1538-3881/aa9be4",
+    "acknowledgements_url": "https://kmtnet.kasi.re.kr/ulens/kmtnet_data_archive/webpages/acknowledgments.html",
+    "photometry_status": "Online OGLE/KMTNet samples plus published Spitzer reduction; no cross-calibration or physical fit performed. Published Spitzer magnitude zero point/alignment unspecified in member.",
+}
+
+
+def source_payload(download, source):
+    """Read only the configured regular tar member, never extract archive paths."""
+    member_name = source.get("archive_member")
+    if not member_name:
+        return download
+    with tarfile.open(fileobj=io.BytesIO(download), mode="r:gz") as archive:
+        matches = [m for m in archive.getmembers() if m.name == member_name]
+        if len(matches) != 1 or not matches[0].isfile():
+            raise ValueError("Archive requires one regular member: " + member_name)
+        if matches[0].size > 12 * 1024 * 1024:
+            raise ValueError("Selected member exceeds size limit")
+        return archive.extractfile(matches[0]).read()
+
+
 FIELDS = ["provider", "event_id", "canonical_event_id", "hjd", "native_time", "time_origin", "magnitude", "magnitude_error", "flux", "flux_error", "flux_unit", "band", "source_url", "native_fields_json"]
 
 
@@ -120,7 +163,7 @@ def parse_source(provider, text, sources=None):
             "magnitude_error": values.get("magnitude_error", ""),
             "flux": values.get("flux_arbitrary_units", values.get("delta_flux", "")),
             "flux_error": values.get("flux_error_arbitrary_units", values.get("flux_error", "")),
-            "flux_unit": "arbitrary_units" if provider == "spitzer" else ("difference_flux_instrumental" if provider == "kmtnet" else ""),
+            "flux_unit": data.get("flux_unit", "arbitrary_units" if provider == "spitzer" else ("difference_flux_instrumental" if provider == "kmtnet" else "")),
             "band": "Spitzer_IRAC_3.6um" if provider == "spitzer" else "I",
             "source_url": data["url"],
             "native_fields_json": json.dumps(values, sort_keys=True),
@@ -148,7 +191,8 @@ def run(providers, directory, sources=None):
         source = sources[provider]
         print(f"Retrieving {provider}: {source['url']}")
         try:
-            raw = fetch_data(provider, sources)
+            download = fetch_data(provider, sources)
+            raw = source_payload(download, source)
             rows = parse_source(provider, raw.decode("utf-8"), sources)
             (directory / f"{provider}_source.txt").write_bytes(raw)
             all_rows.extend(rows)
@@ -166,22 +210,28 @@ def run(providers, directory, sources=None):
                 "status": "downloaded_sample_not_scientifically_validated",
                 "hjd_range": [min(float(row["hjd"]) for row in rows), max(float(row["hjd"]) for row in rows)],
             }
+            if "archive_member" in source:
+                (directory / f"{provider}_download.tar.gz").write_bytes(download)
+                result.update({"archive_member": source["archive_member"],
+                               "download_sha256": hashlib.sha256(download).hexdigest(),
+                               "download_bytes": len(download),
+                               "photometric_scale": source["photometric_scale"]})
             print(f"  -> {len(rows)} measurements")
         except Exception as err:
             result = {"provider": provider, "url": source["url"], "status": "failed", "error": str(err)}
             print(f"  -> ERROR: {err}")
         report.append(result)
-    if all_rows:
-        with (directory / "lightcurve_samples_normalized.csv").open("w", newline="", encoding="utf-8") as fp:
-            writer = csv.DictWriter(fp, fieldnames=FIELDS)
-            writer.writeheader()
-            writer.writerows(all_rows)
+    with (directory / "lightcurve_samples_normalized.csv").open("w", newline="", encoding="utf-8") as fp:
+        writer = csv.DictWriter(fp, fieldnames=FIELDS)
+        writer.writeheader()
+        writer.writerows(all_rows)
     (directory / "ingestion_manifest.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     print("Completed; output:", directory.resolve())
-    if sources is PAIR_SOURCES:
-        match = {**PAIR_MATCH, "download_status": {item["provider"]: item["status"] for item in report}}
+    if sources is PAIR_SOURCES or sources is TRIFECTA_SOURCES:
+        match_spec = TRIFECTA_MATCH if sources is TRIFECTA_SOURCES else PAIR_MATCH
+        match = {**match_spec, "download_status": {item["provider"]: item["status"] for item in report}}
         (directory / "event_match.json").write_text(json.dumps(match, indent=2), encoding="utf-8")
-        print("Pair uses the catalog event cross-reference. Each observatory retains its native photometric scale.")
+        print("Same-event collection uses documented identities. Provider/published photometric scales remain separate.")
     else:
         print("NOTE: samples are unrelated events; no scientific cross-match has been made.")
     return all(item["status"] != "failed" for item in report)
@@ -190,10 +240,14 @@ def run(providers, directory, sources=None):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", choices=["ogle", "kmtnet", "spitzer", "all"], default="ogle")
-    parser.add_argument("--event-pair", action="store_true", help="retrieve OGLE-2016-BLG-1190 and its documented KMTNet counterpart")
+    profile = parser.add_mutually_exclusive_group()
+    profile.add_argument("--trifecta", action="store_true", help="retrieve OGLE, KMTNet and published Spitzer measurements of OGLE-2016-BLG-1190")
+    profile.add_argument("--event-pair", action="store_true", help="retrieve OGLE-2016-BLG-1190 and its documented KMTNet counterpart")
     parser.add_argument("--output", type=Path, default=Path("romanmast_ingest_samples"))
     args = parser.parse_args()
-    if args.event_pair:
+    if args.trifecta:
+        success = run(list(TRIFECTA_SOURCES), args.output, TRIFECTA_SOURCES)
+    elif args.event_pair:
         success = run(list(PAIR_SOURCES), args.output, PAIR_SOURCES)
     else:
         success = run([args.source] if args.source != "all" else list(SOURCES), args.output)
