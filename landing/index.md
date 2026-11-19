@@ -1,10 +1,10 @@
 ---
-title: RomanMAST
+title: LensBridge
 ---
 
-# RomanMAST
+# LensBridge
 
-![RomanMAST](../assets/romanmast-banner.png)
+![LensBridge](../assets/lensbridge-banner.png)
 
 Connecting historical light to future discovery.
 
@@ -12,4 +12,4 @@ Connecting historical light to future discovery.
 
 This independent community project develops historical microlensing context for future Roman science. The repository now includes runnable retrieval and integrity checks; calibration and physical model fitting remain future work.
 
-Created by Bart Salazar and Brad Devowe. Not an official mission or archive release.
+Project originated by Bart Salazar. Developed with Brad Devowe / Simple Minds Studios. Not an official mission or archive release.
