@@ -1,0 +1,103 @@
+{
+  "verification": "Full live source downloads and normalization verified; event photometry remains on native scales",
+  "sources": [
+    {
+      "provider": "ogle",
+      "event_id": "OGLE-2016-BLG-1190",
+      "canonical_event_id": "OGLE-2016-BLG-1190",
+      "time_origin": 0.0,
+      "url": "https://www.astrouw.edu.pl/ogle/ogle4/ews/2016/blg-1190/phot.dat",
+      "retrieved_utc": "2026-11-19T19:13:39.042684+00:00",
+      "sha256": "eddacf19c752bd630cc90a58a2ea51da0d96bb463138f94a66da5f96433c6279",
+      "records": 8801,
+      "bytes": 334812,
+      "notes": "OGLE EWS I-band photometry. Publication usage requires communication with OGLE.",
+      "status": "downloaded_sample_not_scientifically_validated",
+      "hjd_range": [
+        2455260.86264,
+        2457691.50351
+      ]
+    },
+    {
+      "provider": "kmtnet",
+      "event_id": "KMT-2016-BLG-0113",
+      "canonical_event_id": "OGLE-2016-BLG-1190",
+      "time_origin": 2450000.0,
+      "url": "https://kmtnet.kasi.re.kr/ulens/event/2016/data/KB160113/pysis/KMTC03_I.pysis",
+      "retrieved_utc": "2026-11-19T19:13:46.023656+00:00",
+      "sha256": "e6059e803fb45cb13d1fdc63e0860dd59b8f2bf8d77b428cf4840dd2a1524bc9",
+      "records": 1745,
+      "bytes": 132679,
+      "notes": "KMTC03 I-band pySIS. Time offset verified against 2016 event epoch; instrumental flux scale retained.",
+      "status": "downloaded_sample_not_scientifically_validated",
+      "hjd_range": [
+        2457439.84326,
+        2457680.5397
+      ]
+    }
+  ],
+  "canonical_event_id": "OGLE-2016-BLG-1190",
+  "total_rows": 10546,
+  "unrelated_provider_sample_live_checks": [
+    {
+      "provider": "ogle",
+      "event_id": "OGLE-2026-BLG-0001",
+      "canonical_event_id": "OGLE-2026-BLG-0001",
+      "time_origin": 0.0,
+      "url": "https://www.astrouw.edu.pl/ogle/ogle4/ews/2026/blg-0001/phot.dat",
+      "retrieved_utc": "2026-11-19T19:15:19.868188+00:00",
+      "sha256": "4a03869818b28939dcec91018f99adb6fbf4f7d85a5dddea006af407a46e3f1f",
+      "records": 390,
+      "bytes": 14769,
+      "notes": "OGLE EWS I-band photometry. Publication usage requires communication with OGLE.",
+      "status": "downloaded_sample_not_scientifically_validated",
+      "hjd_range": [
+        2457821.85184,
+        2461313.56235
+      ]
+    },
+    {
+      "provider": "kmtnet",
+      "event_id": "KMT-2025-BLG-0001",
+      "canonical_event_id": "KMT-2025-BLG-0001",
+      "time_origin": 0.0,
+      "url": "https://kmtnet.kasi.re.kr/~ulens/event/2025/data/KB250001/pysis/KMTA01_I.pysis",
+      "retrieved_utc": "2026-11-19T19:15:25.575858+00:00",
+      "sha256": "067ff1afc74fc5246b16fef55165ce8769094e673ca9fb4b131a623ed3d3b215",
+      "records": 1286,
+      "bytes": 101655,
+      "notes": "KMTNet pySIS I-band. This file is one observatory/reduction, not all event data.",
+      "status": "downloaded_sample_not_scientifically_validated",
+      "hjd_range": [
+        2460727.2309,
+        2460964.92838
+      ]
+    },
+    {
+      "provider": "spitzer",
+      "event_id": "OGLE-2015-BLG-0011",
+      "canonical_event_id": "OGLE-2015-BLG-0011",
+      "time_origin": 2450000.0,
+      "url": "https://www.astronomy.ohio-state.edu/Spitzer2015/data/OGLE-2015-BLG-0011/phot_1.dat",
+      "retrieved_utc": "2026-11-19T19:15:30.933060+00:00",
+      "sha256": "09569bcf158d9f8109f2a9d15f43981e46c24746474731e673c0395587cef24e",
+      "records": 53,
+      "bytes": 1809,
+      "notes": "Spitzer IRAC reduction variant 1; flux in arbitrary units. Other reductions exist.",
+      "status": "downloaded_sample_not_scientifically_validated",
+      "hjd_range": [
+        2457184.958937,
+        2457222.584749
+      ]
+    }
+  ],
+  "ogle_historical_benchmark": {
+    "event_id": "OGLE-2011-BLG-0462",
+    "full_file_rows": 3718,
+    "reference_rows": 30,
+    "near_peak_rows": 74,
+    "median_reference_i_mag": 16.396,
+    "median_near_peak_i_mag": 13.538,
+    "near_peak_relative_flux": 13.90592875465446
+  }
+}
