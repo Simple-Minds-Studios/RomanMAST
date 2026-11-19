@@ -1,8 +1,12 @@
+![RomanMAST — connecting historical light to future discovery](assets/romanmast-banner.png)
+
 # The Roman Microlensing Trifecta
 ## Building Discovery Infrastructure for Invisible Objects
 
 **Bart Salazar & Brad Devowe**  
 *Community contributors to Roman-era science infrastructure*
+
+[Explore the project](https://simple-minds-studios.github.io/RomanMAST/) · [Run the public-data examples](examples/public_data/README.md)
 
 ## Executive Summary
 
