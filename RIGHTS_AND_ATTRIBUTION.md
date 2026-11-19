@@ -14,7 +14,7 @@ Preserve original copyright dates, notices, and collaborator credits. Publicatio
 
 Preferred public credit:
 
-> The Roman Microlensing Trifecta — Bart Salazar and Brad Devowe. Published by Simple Minds Studios. Source: https://github.com/Simple-Minds-Studios/RomanMAST. Version: [commit/date]. Adaptation: [name and summary of changes].
+> LensBridge (The Roman Microlensing Trifecta) — Bart Salazar and Brad Devowe. Published by Simple Minds Studios. Source: https://github.com/Simple-Minds-Studios/RomanMAST. Version: [commit/date]. Adaptation: [name and summary of changes].
 
 MIT requires retention of its copyright and permission notice; this preferred public credit is a request, not an additional MIT restriction. For Creative Commons material, follow the applicable license’s attribution, license-link, and change-notice requirements. Credit alone does not authorize a use outside an applicable license or legal exception.
 

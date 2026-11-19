@@ -1,10 +1,13 @@
-![RomanMAST — connecting historical light to future discovery](assets/romanmast-banner.png)
+![LensBridge — connecting historical light to future discovery](assets/lensbridge-banner.png)
 
-# The Roman Microlensing Trifecta
-## Building Discovery Infrastructure for Invisible Objects
+# LensBridge
+## Connecting historical light to future discovery.
 
-**Bart Salazar & Brad Devowe**  
-*Community contributors to Roman-era science infrastructure*
+The Roman Microlensing Trifecta — a community research initiative for the Roman era.
+
+**Project originated by Bart Salazar · Developed with Brad Devowe**
+
+*Simple Minds Studios · Community contributors to Roman-era science infrastructure*
 
 [Explore the project](https://simple-minds-studios.github.io/RomanMAST/) · [Run the public-data examples](examples/public_data/README.md)
 
@@ -36,6 +39,10 @@ Microlensing is fundamentally time-integrated. No single observation or archive 
 
 Runnable [Python examples](examples/public_data/README.md) retrieve historical OGLE, KMTNet and Spitzer samples. The same-event mode records the documented OGLE-2016-BLG-1190 / KMT-2016-BLG-0113 association, explicit time offsets and source checksums. See the [source inventory](docs/RomanMAST_data_sources_2026-11-19.md) for data formats, provider policies and validation status.
 
+## Name and continuity
+
+LensBridge is the project identity adopted on 19 November 2026. The existing `RomanMAST` repository URL, historical documents and command names remain available for continuity. This name does not imply affiliation with Roman or MAST.
+
 ## Project Status
 
 This repository presents a **community-authored research concept and infrastructure proposal**. It is not an official NASA, STScI, MAST, Roman mission, OGLE, KMTNet, Gaia, or Spitzer publication, endorsement, or data release.
@@ -50,4 +57,4 @@ See [Rights and Attribution](RIGHTS_AND_ATTRIBUTION.md) for licensing scope and 
 
 ## Attribution
 
-Created by Bart Salazar and Brad Devowe. Repository direction and presentation maintained through Bart Salazar / Simple Minds Studios.
+Project concept originated by Bart Salazar, with development contributions from Brad Devowe. Published through Simple Minds Studios. Existing authorship and license notices remain applicable.

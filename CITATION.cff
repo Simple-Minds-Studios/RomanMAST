@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 type: dataset
-title: "RomanMAST: Microlensing Dataset Infrastructure for Roman"
+title: "LensBridge: Microlensing Dataset Infrastructure for Roman"
 message: "If you use this repository or its concepts in your work, please cite it as follows."
 authors:
   - family-names: Salazar
@@ -10,7 +10,7 @@ authors:
 contact:
   - name: "MITechBros"
     email: "MITechBros@outlook.com"
-repository-code: "https://github.com/Bartron773/RomanMAST"
+repository-code: "https://github.com/Simple-Minds-Studios/RomanMAST"
 license: MIT
 date-released: 2026-03-07
 keywords:
@@ -20,7 +20,8 @@ keywords:
   - astronomical archives
   - time-domain astronomy
 abstract: >
-  RomanMAST is a community proposal outlining three archival datasets
+  LensBridge (formerly RomanMAST) is a community project developing public-data
+  tools and proposing three archival datasets
   designed to enhance Roman Space Telescope microlensing science.
   The project focuses on enabling joint analysis between Roman observations
   and historical datasets including OGLE, Gaia, Spitzer, and KMTNet.
