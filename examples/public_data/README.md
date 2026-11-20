@@ -66,3 +66,12 @@ python3 ogle_2016_blg_1093.py --verify --output /tmp/lensbridge-1093
 The [second event collection](../../datasets/events/OGLE-2016-BLG-1093/README.md) selects 2,904 published measurements: OGLE 1,368; KMTNet 1,500 across KMTA/KMTC/KMTS; Spitzer 36. It uses the Shin et al. 2022 figure-data catalog through CDS/VizieR, with documented units, native instrument labels and original record indices. The source's 7,824 MOA rows remain in the raw snapshot but are excluded from the selected CSV.
 
 Open [viewer_1093.html](viewer_1093.html) locally and select the generated `observations.csv` to explore separate program panels, site colors, a shared time window and published uncertainty bars. No file is uploaded or cross-calibration performed.
+
+## Expanded 1093 example: include MOA
+
+```sh
+python3 ogle_2016_blg_1093.py --include-moa --output /tmp/lensbridge-1093-four-programs
+python3 ogle_2016_blg_1093.py --verify --output /tmp/lensbridge-1093-four-programs
+```
+
+This optional selection includes the published MOA R-band series: **7,824 additional measurements**, for **10,728 rows across four programs and six instrument series**. The same viewer automatically adds a separate MOA panel when that series is present. It continues to accept the original three-program CSV. The [expanded collection record](../../datasets/events/OGLE-2016-BLG-1093/four-programs/README.md) documents the live run, hashes, selection and scientific limits.

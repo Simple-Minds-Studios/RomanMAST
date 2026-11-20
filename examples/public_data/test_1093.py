@@ -39,6 +39,37 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(rows[3]['canonical_event_id'],'OGLE-2016-BLG-1093')
         self.assertEqual(report['all_five_series_date_range_intersection']['has_overlap'],False)
 
+    def test_four_program_collection_roundtrip(self):
+        report = collect(self.output,self.input,include_moa=True)
+        self.assertTrue(report['integrity_passed'])
+        self.assertEqual(report['selected_measurements'],8)
+        self.assertEqual(report['excluded_MOA_records'],0)
+        self.assertEqual(report['provider_counts']['moa'],1)
+        self.assertIn('MOA', report['instruments'])
+        self.assertNotIn('all_five_series_date_range_intersection',report)
+
+    def test_missing_moa_rejected_when_requested(self):
+        payload='\n'.join(l for l in FIXTURE.splitlines() if not l.startswith('MOA')).encode()
+        with self.assertRaises(ValueError):parse_tsv(payload,include_moa=True)
+        self.assertEqual(len(parse_tsv(payload)[0]),7)
+
+    def test_selection_tampering_detected(self):
+        collect(self.output,self.input,include_moa=True)
+        p=self.output/'ingestion_manifest.json';manifest=json.loads(p.read_text())
+        manifest['include_moa']=False
+        p.write_text(json.dumps(manifest))
+        self.assertFalse(validate(self.output)['integrity_passed'])
+
+    def test_legacy_manifest_without_selection_remains_valid(self):
+        collect(self.output,self.input)
+        p=self.output/'ingestion_manifest.json';manifest=json.loads(p.read_text())
+        del manifest['include_moa']
+        p.write_text(json.dumps(manifest))
+        self.assertTrue(validate(self.output)['integrity_passed'])
+
+    def test_nonboolean_selection_rejected(self):
+        with self.assertRaises(ValueError):parse_tsv(FIXTURE.encode(),include_moa='false')
+
     def test_missing_spitzer_rejected(self):
         with self.assertRaises(ValueError):
             parse_tsv('\n'.join(l for l in FIXTURE.splitlines() if not l.startswith('Spitzer')).encode())

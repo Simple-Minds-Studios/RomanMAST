@@ -3,7 +3,8 @@
 
 Python 3.9+, standard library only. Original catalog bytes remain local.
 The downloaded catalog includes MOA, which is retained in source bytes but
-explicitly excluded from this selected OGLE/KMTNet/Spitzer CSV.
+excluded from the default OGLE/KMTNet/Spitzer CSV. Use --include-moa
+to retain all four published programs (six instrument series).
 """
 import argparse
 from collections import Counter
@@ -38,7 +39,10 @@ FIELDS = ["canonical_event_id", "provider", "instrument", "band", "hjd",
           "source_url", "source_record", "native_fields_json"]
 
 
-def parse_tsv(payload):
+def parse_tsv(payload, include_moa=False):
+    if type(include_moa) is not bool:
+        raise ValueError("include_moa must be a boolean")
+    selected = SELECTED | ({"moa"} if include_moa else set())
     text = payload.decode("utf-8")
     if "#Name: " + CATALOG not in text.splitlines() or "Heliocentric Julian date, HJD-2450000.0" not in text:
         raise ValueError("Missing expected catalog identity or explicit time-origin metadata")
@@ -66,7 +70,7 @@ def parse_tsv(payload):
         if not all(map(math.isfinite, (t, m, e))) or not 0 < t < 10000:
             raise ValueError(f"Record {record}: nonfinite values or unexpected reduced HJD epoch")
         counts[instrument] += 1
-        if provider in SELECTED:
+        if provider in selected:
             rows.append({"canonical_event_id": EVENT, "provider": provider,
                 "instrument": instrument, "band": band, "hjd": f"{t+2450000:.8f}",
                 "native_hjd_minus_2450000": time, "magnitude": mag,
@@ -75,7 +79,8 @@ def parse_tsv(payload):
                 "native_fields_json": json.dumps(dict(zip(("Inst","HJD","omag","e_omag","Band"), cells)),sort_keys=True)})
     if not counts or sum(counts.values()) >= 100000:
         raise ValueError("Empty catalog or query row limit reached")
-    if not set(INSTRUMENTS)-{"MOA"} <= set(counts):
+    required = set(INSTRUMENTS) if include_moa else set(INSTRUMENTS)-{"MOA"}
+    if not required <= set(counts):
         raise ValueError("Selected observation series is missing")
     return rows, dict(counts)
 
@@ -103,18 +108,21 @@ def quality(rows, counts):
             "maximum_gap_days": max(gaps) if gaps else None}
     start = max(s["hjd_range"][0] for s in summaries.values())
     end = min(s["hjd_range"][1] for s in summaries.values())
-    return {"selected_measurements": len(rows), "provider_counts": dict(Counter(row["provider"] for row in rows)),
-        "source_catalog_instrument_counts": counts, "excluded_MOA_records": counts.get("MOA",0),
+    report = {"selected_measurements": len(rows), "provider_counts": dict(Counter(row["provider"] for row in rows)),
+        "source_catalog_instrument_counts": counts, "excluded_MOA_records": counts.get("MOA",0)-sum(row["provider"] == "moa" for row in rows),
         "instruments": summaries, "warnings": warnings,
-        "all_five_series_date_range_intersection": {"start_hjd":start,"end_hjd":end,"days":max(0,end-start),"has_overlap":start<=end},
+        "all_selected_series_date_range_intersection": {"start_hjd":start,"end_hjd":end,"days":max(0,end-start),"has_overlap":start<=end},
         "scope": "Published catalog measurements; date-range intersection is not simultaneous/continuous coverage. Magnitude scales and detailed HJD time scales require scientific review; no physical fit."}
+    if "MOA" not in summaries:
+        report["all_five_series_date_range_intersection"] = report["all_selected_series_date_range_intersection"]
+    return report
 
 
 def validate(directory):
     directory = Path(directory)
     raw = (directory/"catalog_source.tsv").read_bytes()
-    rows, counts = parse_tsv(raw)
     manifest = json.loads((directory/"ingestion_manifest.json").read_text())
+    rows, counts = parse_tsv(raw, manifest.get("include_moa", False))
     errors = []
     for key,value in {"source_url": SOURCE_URL,"source_sha256":hashlib.sha256(raw).hexdigest(),
         "source_bytes":len(raw),"source_catalog_rows":sum(counts.values()),"selected_rows":len(rows),
@@ -127,7 +135,7 @@ def validate(directory):
     return {"integrity_passed":not errors,"errors":errors,**quality(rows,counts)}
 
 
-def collect(directory, input_path=None):
+def collect(directory, input_path=None, include_moa=False):
     directory = Path(directory)
     directory.mkdir(parents=True,exist_ok=True)
     if input_path:
@@ -141,12 +149,12 @@ def collect(directory, input_path=None):
         retrieval = {"input_kind":"live_download","retrieved_utc":datetime.now(timezone.utc).isoformat()}
     if len(raw)>4000000:
         raise ValueError("Catalog exceeds example download limit")
-    rows,counts = parse_tsv(raw)
+    rows,counts = parse_tsv(raw, include_moa)
     normalized = csv_bytes(rows)
     manifest = {"source_url":SOURCE_URL,"source_sha256":hashlib.sha256(raw).hexdigest(),
         "source_bytes":len(raw),"source_catalog_rows":sum(counts.values()),"selected_rows":len(rows),
         "normalized_csv_sha256":hashlib.sha256(normalized).hexdigest(),"identity":IDENTITY,
-        "source_catalog_instrument_counts":counts,**retrieval}
+        "source_catalog_instrument_counts":counts,"include_moa":include_moa,**retrieval}
     (directory/"catalog_source.tsv").write_bytes(raw)
     (directory/"observations.csv").write_bytes(normalized)
     (directory/"ingestion_manifest.json").write_text(json.dumps(manifest,indent=2)+"\n")
@@ -159,10 +167,13 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output",type=Path,default=Path("lensbridge_1093"))
     parser.add_argument("--input",type=Path,help="Parse a saved VizieR response; records processing time, not a new retrieval")
+    parser.add_argument("--include-moa",action="store_true",help="include the published MOA R-band series as a fourth program")
     parser.add_argument("--verify",action="store_true",help="Verify an existing output directory without network access")
     args = parser.parse_args()
     try:
-        report = validate(args.output) if args.verify else collect(args.output,args.input)
+        if args.verify and args.include_moa:
+            parser.error("--verify reads the saved selection; omit --include-moa")
+        report = validate(args.output) if args.verify else collect(args.output,args.input,args.include_moa)
         print(json.dumps(report,indent=2))
         raise SystemExit(0 if report["integrity_passed"] else 1)
     except (OSError,ValueError,KeyError,TypeError,csv.Error) as exc:

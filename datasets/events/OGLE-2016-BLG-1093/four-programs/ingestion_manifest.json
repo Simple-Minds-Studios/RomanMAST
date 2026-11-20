@@ -1,0 +1,31 @@
+{
+  "source_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FAJ%2F163%2F254%2Ffig1&-out=Inst%2CHJD%2Comag%2Ce_omag%2CBand&-out.max=100000",
+  "source_sha256": "e6f39e947fd962755916bcc338bdf9294e2c597f09d4f0b82068f3fc1d602a3d",
+  "source_bytes": 452655,
+  "source_catalog_rows": 10728,
+  "selected_rows": 10728,
+  "normalized_csv_sha256": "54fbb4e2a9be0e815ff54f3775ea88016d2683ab56d6e62433f895cc323826d6",
+  "identity": {
+    "canonical_event_id": "OGLE-2016-BLG-1093",
+    "aliases": [
+      "KMT-2016-BLG-1345",
+      "MOA-2016-BLG-340"
+    ],
+    "identity_evidence": "https://kmtnet.kasi.re.kr/ulens/kmtnet_data_archive/webpages/Shin_et_al_2022_AJ_163_254.html",
+    "paper_doi": "10.3847/1538-3881/ac6513",
+    "catalog_doi": "10.26093/cds/vizier.51630254",
+    "time_convention": "Catalog HJD-2450000; add 2450000 for full HJD. Detailed time scale unspecified.",
+    "photometry": "Published observed magnitudes and errors; instrument zero points remain separate. No flux conversion, cross-calibration or model fit."
+  },
+  "source_catalog_instrument_counts": {
+    "KMTA": 294,
+    "KMTC": 657,
+    "KMTS": 549,
+    "MOA": 7824,
+    "OGLE": 1368,
+    "Spitzer": 36
+  },
+  "include_moa": true,
+  "input_kind": "live_download",
+  "retrieved_utc": "2026-11-20T23:50:06.848358+00:00"
+}

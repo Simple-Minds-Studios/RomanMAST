@@ -43,6 +43,8 @@ The [three-observatory collection](datasets/events/OGLE-2016-BLG-1190/README.md)
 
 A [second event, OGLE-2016-BLG-1093](datasets/events/OGLE-2016-BLG-1093/README.md), now retrieves and verifies 2,904 published measurements from three observing programs and five instrument series. It includes a local-file [light-curve viewer](examples/public_data/viewer_1093.html) with shared time windows and separate photometric scales.
 
+The [optional four-program 1093 example](datasets/events/OGLE-2016-BLG-1093/four-programs/README.md) also retains the published MOA series, expanding the collection to **10,728 measurements**. Use `--include-moa`; the viewer displays MOA on its own magnitude scale.
+
 ## Name and continuity
 
 LensBridge is the project identity adopted on 19 November 2026. The existing `RomanMAST` repository URL, historical documents and command names remain available for continuity. This name does not imply affiliation with Roman or MAST.
