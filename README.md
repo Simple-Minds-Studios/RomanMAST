@@ -41,6 +41,8 @@ Runnable [Python examples](examples/public_data/README.md) retrieve historical O
 
 The [three-observatory collection](datasets/events/OGLE-2016-BLG-1190/README.md) now reproduces **10,560 measurements** of that same event: OGLE (8,801), KMTNet (1,745) and the published Spitzer subset (14). Use `--trifecta` to retrieve the selected files and their provenance. Cross-calibration and physical fitting remain pending.
 
+A [second event, OGLE-2016-BLG-1093](datasets/events/OGLE-2016-BLG-1093/README.md), now retrieves and verifies 2,904 published measurements from three observing programs and five instrument series. It includes a local-file [light-curve viewer](examples/public_data/viewer_1093.html) with shared time windows and separate photometric scales.
+
 ## Name and continuity
 
 LensBridge is the project identity adopted on 19 November 2026. The existing `RomanMAST` repository URL, historical documents and command names remain available for continuity. This name does not imply affiliation with Roman or MAST.
