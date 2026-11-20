@@ -1,0 +1,47 @@
+{
+  "integrity_passed": true,
+  "errors": [],
+  "warnings": [],
+  "sources": {
+    "ogle": {
+      "records": 8801,
+      "hjd_range": [
+        2455260.86264,
+        2457691.50351
+      ],
+      "duplicate_epochs": 0,
+      "median_positive_gap_days": 0.03094500000588596,
+      "maximum_gap_days": 104.35676999995485,
+      "nonpositive_uncertainty_rows": 0
+    },
+    "kmtnet": {
+      "records": 1745,
+      "hjd_range": [
+        2457439.84326,
+        2457680.5397
+      ],
+      "duplicate_epochs": 0,
+      "median_positive_gap_days": 0.019370000110939145,
+      "maximum_gap_days": 8.816420000046492,
+      "nonpositive_uncertainty_rows": 0
+    },
+    "spitzer": {
+      "records": 14,
+      "hjd_range": [
+        2457578.897072,
+        2457595.07662
+      ],
+      "duplicate_epochs": 0,
+      "median_positive_gap_days": 1.2539510000497103,
+      "maximum_gap_days": 2.2890650001354516,
+      "nonpositive_uncertainty_rows": 0
+    }
+  },
+  "overlap": {
+    "hjd_start": 2457578.897072,
+    "hjd_end": 2457595.07662,
+    "duration_days": 16.179547999985516,
+    "has_overlap": true
+  },
+  "scope": "Integrity and temporal sampling only; overlapping ranges do not imply continuous or simultaneous coverage. Native scales and unspecified HJD time scales still require scientific review."
+}

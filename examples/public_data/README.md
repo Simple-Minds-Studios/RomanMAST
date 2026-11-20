@@ -44,3 +44,14 @@ The validator reparses saved raw bytes, verifies hashes, lengths, row counts, pr
 The [saved full-pair report](event_pair_quality_2026-11-19.json) passes integrity for all 10,546 rows. The date-range intersection spans 240.69644 days. OGLE’s median positive gap is about 44.56 minutes and KMTNet’s is 27.89 minutes. These are whole-file sampling summaries; seasonal gaps and irregular sampling remain. The largest gaps are about 104.36 and 8.82 days respectively. Date-range intersection does not establish simultaneous coverage or a scientific match beyond the documented catalog identity.
 
 These checks establish internal consistency with saved provider bytes, not source authenticity, calibrated uncertainties or readiness for joint physical inference. Default unrelated-provider downloads can also be validated; no cross-event overlap is computed.
+
+## Complete the selected three-observatory demonstration
+
+```sh
+python3 romanmast_public_ingest_starter.py --trifecta --output /tmp/lensbridge-trifecta
+python3 validate_ingestion.py /tmp/lensbridge-trifecta --report /tmp/lensbridge-trifecta/quality_report.json
+```
+
+This adds the published Spitzer subset of the **same** OGLE-2016-BLG-1190 event to the existing online OGLE/KMTNet pair: **8,801 + 1,745 + 14 = 10,560 measurements**. The original archive and selected member both receive checksums. The published Spitzer magnitude scale is explicitly unresolved; no flux is inferred. This is a collection of three selected reductions, not every available exposure or a calibrated joint fit. Pair mode and the unrelated default examples remain available.
+
+See the [collection record](../../datasets/events/OGLE-2016-BLG-1190/README.md) for provenance, source acknowledgements, the saved report and the 16.179548-day three-way date-range intersection.

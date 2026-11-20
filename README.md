@@ -39,6 +39,8 @@ Microlensing is fundamentally time-integrated. No single observation or archive 
 
 Runnable [Python examples](examples/public_data/README.md) retrieve historical OGLE, KMTNet and Spitzer samples. The same-event mode records the documented OGLE-2016-BLG-1190 / KMT-2016-BLG-0113 association, explicit time offsets and source checksums. See the [source inventory](docs/RomanMAST_data_sources_2026-11-19.md) for data formats, provider policies and validation status.
 
+The [three-observatory collection](datasets/events/OGLE-2016-BLG-1190/README.md) now reproduces **10,560 measurements** of that same event: OGLE (8,801), KMTNet (1,745) and the published Spitzer subset (14). Use `--trifecta` to retrieve the selected files and their provenance. Cross-calibration and physical fitting remain pending.
+
 ## Name and continuity
 
 LensBridge is the project identity adopted on 19 November 2026. The existing `RomanMAST` repository URL, historical documents and command names remain available for continuity. This name does not imply affiliation with Roman or MAST.
