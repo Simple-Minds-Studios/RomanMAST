@@ -55,3 +55,14 @@ python3 validate_ingestion.py /tmp/lensbridge-trifecta --report /tmp/lensbridge-
 This adds the published Spitzer subset of the **same** OGLE-2016-BLG-1190 event to the existing online OGLE/KMTNet pair: **8,801 + 1,745 + 14 = 10,560 measurements**. The original archive and selected member both receive checksums. The published Spitzer magnitude scale is explicitly unresolved; no flux is inferred. This is a collection of three selected reductions, not every available exposure or a calibrated joint fit. Pair mode and the unrelated default examples remain available.
 
 See the [collection record](../../datasets/events/OGLE-2016-BLG-1190/README.md) for provenance, source acknowledgements, the saved report and the 16.179548-day three-way date-range intersection.
+
+## Second event: OGLE-2016-BLG-1093
+
+```sh
+python3 ogle_2016_blg_1093.py --output /tmp/lensbridge-1093
+python3 ogle_2016_blg_1093.py --verify --output /tmp/lensbridge-1093
+```
+
+The [second event collection](../../datasets/events/OGLE-2016-BLG-1093/README.md) selects 2,904 published measurements: OGLE 1,368; KMTNet 1,500 across KMTA/KMTC/KMTS; Spitzer 36. It uses the Shin et al. 2022 figure-data catalog through CDS/VizieR, with documented units, native instrument labels and original record indices. The source's 7,824 MOA rows remain in the raw snapshot but are excluded from the selected CSV.
+
+Open [viewer_1093.html](viewer_1093.html) locally and select the generated `observations.csv` to explore separate program panels, site colors, a shared time window and published uncertainty bars. No file is uploaded or cross-calibration performed.
