@@ -1,0 +1,84 @@
+{
+  "integrity_passed": true,
+  "errors": [],
+  "selected_measurements": 2904,
+  "provider_counts": {
+    "kmtnet": 1500,
+    "ogle": 1368,
+    "spitzer": 36
+  },
+  "source_catalog_instrument_counts": {
+    "KMTA": 294,
+    "KMTC": 657,
+    "KMTS": 549,
+    "MOA": 7824,
+    "OGLE": 1368,
+    "Spitzer": 36
+  },
+  "excluded_MOA_records": 7824,
+  "instruments": {
+    "KMTA": {
+      "records": 294,
+      "hjd_range": [
+        2457442.26811,
+        2457676.94521
+      ],
+      "duplicate_epochs": 0,
+      "nonpositive_error_rows": 0,
+      "median_positive_gap_days": 0.0848599998280406,
+      "maximum_gap_days": 10.911359999794513
+    },
+    "KMTC": {
+      "records": 657,
+      "hjd_range": [
+        2457440.84645,
+        2457676.52073
+      ],
+      "duplicate_epochs": 0,
+      "nonpositive_error_rows": 0,
+      "median_positive_gap_days": 0.04825000022538006,
+      "maximum_gap_days": 8.972099999897182
+    },
+    "KMTS": {
+      "records": 549,
+      "hjd_range": [
+        2457442.6181,
+        2457681.28989
+      ],
+      "duplicate_epochs": 0,
+      "nonpositive_error_rows": 0,
+      "median_positive_gap_days": 0.05628499994054437,
+      "maximum_gap_days": 9.827790000010282
+    },
+    "OGLE": {
+      "records": 1368,
+      "hjd_range": [
+        2455260.86866,
+        2457661.5314
+      ],
+      "duplicate_epochs": 0,
+      "nonpositive_error_rows": 0,
+      "median_positive_gap_days": 0.9613899998366833,
+      "maximum_gap_days": 109.33994999993593
+    },
+    "Spitzer": {
+      "records": 36,
+      "hjd_range": [
+        2457557.95857,
+        2457594.74344
+      ],
+      "duplicate_epochs": 0,
+      "nonpositive_error_rows": 0,
+      "median_positive_gap_days": 1.0483200000599027,
+      "maximum_gap_days": 2.5986299999058247
+    }
+  },
+  "warnings": [],
+  "all_five_series_date_range_intersection": {
+    "start_hjd": 2457557.95857,
+    "end_hjd": 2457594.74344,
+    "days": 36.78487000009045,
+    "has_overlap": true
+  },
+  "scope": "Published catalog measurements; date-range intersection is not simultaneous/continuous coverage. Magnitude scales and detailed HJD time scales require scientific review; no physical fit."
+}
