@@ -30,3 +30,7 @@ All 10,728 normalized observations reproduce exactly from the saved source bytes
 This is the same published figure-data release used in the [three-program example](../README.md), not a newly independent measurement campaign. Retaining MOA changes the collection's selection and viewer coverage, not the identity of the event or the authorship of the observations.
 
 Credit Shin et al. 2022, AJ 163, 254, DOI 10.3847/1538-3881/ac6513; CDS/VizieR DOI 10.26093/cds/vizier.51630254; and the MOA, OGLE, KMTNet and Spitzer teams. Follow catalog rights and original contributor acknowledgements. LensBridge's software license does not relicense upstream measurements.
+
+## Public display snapshot
+
+The public viewer's Load example button uses a compact, attributed display derivative under `examples/public_data/data/1093.json`. It retains the original published values and catalog record indices; raw catalog/normalized CSV reconstruction remains available through the commands above. See the display file's NOTICE for source credit, reuse terms and transport-format changes. The example begins in a short event window, with all 10,728 observations available through Full range.
