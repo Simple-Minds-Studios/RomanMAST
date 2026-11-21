@@ -7,3 +7,5 @@
 Project attribution: Bart Salazar and Brad Devowe / Simple Minds Studios. See the root rights and attribution notice for applicable terms. The older root `RomanMAST.png` is retained as a historical asset and is not the active homepage banner.
 
 The earlier `romanmast-banner.png` remains available for historical links. The active README and homepage use `lensbridge-banner.png`. The favicon geometry is retained, with its accessible title updated.
+
+`diagrams/microlensing.svg` is a schematic geometry illustration, explicitly not to scale or a fitted model. `diagrams/1093-coverage.svg` draws first-to-last dates from the published 1093 collection's quality report, clipped to a shared window. Left arrows mark earlier baselines; range bars do not assert continuous sampling. The diagram credits Shin et al. 2022 / CDS-VizieR.

@@ -75,3 +75,15 @@ python3 ogle_2016_blg_1093.py --verify --output /tmp/lensbridge-1093-four-progra
 ```
 
 This optional selection includes the published MOA R-band series: **7,824 additional measurements**, for **10,728 rows across four programs and six instrument series**. The same viewer automatically adds a separate MOA panel when that series is present. It continues to accept the original three-program CSV. The [expanded collection record](../../datasets/events/OGLE-2016-BLG-1093/four-programs/README.md) documents the live run, hashes, selection and scientific limits.
+
+## Public example button
+
+The [hosted viewer](https://simple-minds-studios.github.io/RomanMAST/examples/public_data/viewer_1093.html#example) includes **Load example · 1093**, which opens a compact, attributed snapshot of all 10,728 published measurements. It begins in the 7550–7570 reduced-HJD window; Full range reveals the long baseline. Visitors can still load a local CSV separately. The bundled example is a published-data snapshot, not a live feed or new fitted model. See [demo credit and reuse](data/NOTICE.md).
+
+Rebuild that display snapshot from a verified local four-program collection:
+
+```sh
+python3 build_1093_demo.py --input /tmp/lensbridge-1093-four-programs
+```
+
+The builder verifies the source reconstruction before exporting original strings into the compact transport format. The public demo loader checks event/schema identity, instrument counts, numeric values and distinct catalog record indices before drawing the data. Open the viewer through an HTTP(S) server for the example button; local CSV loading also works with the downloaded HTML.
