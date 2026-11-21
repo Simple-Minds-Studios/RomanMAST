@@ -35,3 +35,12 @@ assert.throws(()=>vm.runInContext('load(fixtureCSV)',context),/Wrong event/);
 console.log('Viewer CSV quoting, exact full-range endpoints and wrong-event rejection passed.');
 
 if(process.argv[2]){context.fixtureCSV=fs.readFileSync(process.argv[2],'utf8');vm.runInContext('rows=load(fixtureCSV);full();',context);const points=elements.get('plots').children.flatMap(s=>s.children).reduce((n,e)=>n+((e.innerHTML||'').match(/<circle /g)||[]).length,0);assert.equal(points,10728);assert.equal(elements.get('plots').children.length,4);console.log('All 10,728 real-file points render across four panels.');}
+
+assert.match(elements.get('start').value,/^\d+\.\d{6}$/);
+context.window={innerWidth:390};
+vm.runInContext('draw();',context);
+const mobile=elements.get('plots').children[0].children.find(e=>e.className==='plot').innerHTML;
+assert.match(mobile,/viewBox="0 0 360 280"/);
+assert.match(mobile,/y="22"[^>]*>mag/);
+assert.match(mobile,/text-anchor="end"[^>]*>7681/);
+console.log('Phone chart coordinates, axis-label spacing and bounded full-range formatting passed.');
