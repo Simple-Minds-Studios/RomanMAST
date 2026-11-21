@@ -1,0 +1,68 @@
+{
+  "source_repository": "Bartron773/RomanMAST",
+  "source_default_sha": "f7df089e61d95296f12d10f0139ed34b230f8ff6",
+  "organization_sha_before_audit": "e012ac0d1d9d0e9d3e9b840f1100f18caa13916e",
+  "common_ancestor": "f7df089e61d95296f12d10f0139ed34b230f8ff6",
+  "source_description": "Community-built infrastructure proposal connecting historic microlensing surveys to the Roman Space Telescope.",
+  "source_homepage": "https://bartron773.github.io/RomanMAST/",
+  "preserved_branches": [],
+  "source_branch_map": [
+    {
+      "source_branch": "main",
+      "sha": "f7df089e61d95296f12d10f0139ed34b230f8ff6",
+      "preserved_in": "organization main ancestry"
+    }
+  ],
+  "source_tags": [
+    {
+      "name": "v1.0.0",
+      "sha": "2cc7ce08c5f0c47ae3415f16187807f3053619c3"
+    }
+  ],
+  "issues_and_pull_requests": [],
+  "releases": [
+    {
+      "url": "https://api.github.com/repos/Bartron773/RomanMAST/releases/294264892",
+      "assets_url": "https://api.github.com/repos/Bartron773/RomanMAST/releases/294264892/assets",
+      "upload_url": "https://uploads.github.com/repos/Bartron773/RomanMAST/releases/294264892/assets{?name,label}",
+      "html_url": "https://github.com/Bartron773/RomanMAST/releases/tag/v1.0.0",
+      "id": 294264892,
+      "author": {
+        "login": "Bartron773",
+        "id": 147872443,
+        "node_id": "U_kgDOCNBauw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/147872443?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/Bartron773",
+        "html_url": "https://github.com/Bartron773",
+        "followers_url": "https://api.github.com/users/Bartron773/followers",
+        "following_url": "https://api.github.com/users/Bartron773/following{/other_user}",
+        "gists_url": "https://api.github.com/users/Bartron773/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/Bartron773/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/Bartron773/subscriptions",
+        "organizations_url": "https://api.github.com/users/Bartron773/orgs",
+        "repos_url": "https://api.github.com/users/Bartron773/repos",
+        "events_url": "https://api.github.com/users/Bartron773/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/Bartron773/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "node_id": "RE_kwDOREhpMM4RiiA8",
+      "tag_name": "v1.0.0",
+      "target_commitish": "main",
+      "name": "Complete RomanMAST Trifecta Submission",
+      "draft": false,
+      "immutable": false,
+      "prerelease": false,
+      "created_at": "2026-03-07T15:57:59Z",
+      "updated_at": "2026-03-07T16:05:45Z",
+      "published_at": "2026-03-07T16:05:45Z",
+      "assets": [],
+      "tarball_url": "https://api.github.com/repos/Bartron773/RomanMAST/tarball/v1.0.0",
+      "zipball_url": "https://api.github.com/repos/Bartron773/RomanMAST/zipball/v1.0.0",
+      "body": "Initial release containing the full RomanMAST microlensing trifecta proposal submission, including OGLE-Gaia, Spitzer Parallax, and OGLE-KMTNet light curve concept schemas and documentation."
+    }
+  ],
+  "note": "Git history and branch tips are preserved under archive/personal/*. GitHub issue/PR numbers, review threads, check runs, permissions and secrets are not Git objects. Source records remain at their original URLs. No credential values have been copied."
+}
