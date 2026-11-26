@@ -1,0 +1,40 @@
+{
+  "event": "OGLE-2016-BLG-1093",
+  "status": "protocol_only",
+  "time_origin": 2450000,
+  "expected_counts": {
+    "OGLE": 1368,
+    "KMTA": 294,
+    "KMTC": 657,
+    "KMTS": 549,
+    "MOA": 7824,
+    "Spitzer": 36
+  },
+  "runs": {
+    "A": [
+      "OGLE"
+    ],
+    "B": [
+      "OGLE",
+      "KMTA",
+      "KMTC",
+      "KMTS"
+    ],
+    "C": [
+      "OGLE",
+      "KMTA",
+      "KMTC",
+      "KMTS",
+      "MOA"
+    ],
+    "D": [
+      "OGLE",
+      "KMTA",
+      "KMTC",
+      "KMTS",
+      "MOA",
+      "Spitzer"
+    ]
+  },
+  "seed": 1093
+}
