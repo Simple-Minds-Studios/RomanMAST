@@ -1,0 +1,3 @@
+# E002 robustness — initial execution
+
+Run from analysis: `OPENBLAS_NUM_THREADS=1 python robustness.py INPUT.json > results/E002_robustness.json`. Input used locally: PDF-recovered JSON, SHA256 734bc6d16dfa861c506c70219d834095d4417cdef7d72c2f914a70a2319b484a, matching E001. Original catalog equivalence pending. Existing tests: 2 passed in 0.41s. One-pass error inflation max(1,RMS standardized residual) per instrument; not a correlated-noise likelihood. Seed 1093; 20 independent Gaussian synthetic trials. Real-event confidence intervals, alternative held-out partitions and correlated-noise models pending.
