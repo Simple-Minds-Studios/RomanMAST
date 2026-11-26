@@ -56,3 +56,13 @@ optimizer termination. The pilot budgets and null controls are insufficient to
 certify global recovery or establish a scientific detection threshold. Keep
 historical planetary recovery paused until a separately frozen protocol
 establishes blind recovery and null-control acceptance criteria and passes them.
+
+The separate replay below uses the archived E003.1 per-instrument objective and
+original Gaussian noise streams. It reproduces the original 30-evaluation
+control before comparing a 100-evaluation budget without changing the original
+results. Run it from the analysis directory.
+
+```sh
+PYTHONPATH="$PWD" python experiments/E003_2/reproduce_injection3_limit.py \
+  --out results/E003_2/injection3-limit-reproduction
+```
