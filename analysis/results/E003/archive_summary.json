@@ -1,0 +1,367 @@
+{
+  "1093": {
+    "delta_train": -30.945078888731587,
+    "delta_test": -3195.000675020861,
+    "binary_converged": false,
+    "instruments": {
+      "KMTA": {
+        "training": 2.070009083225864,
+        "held_out": -0.9120493857248488
+      },
+      "KMTC": {
+        "training": 19.231176778906626,
+        "held_out": -3116.0633687052905
+      },
+      "KMTS": {
+        "training": -32.91768311523812,
+        "held_out": -74.76787256316362
+      },
+      "MOA": {
+        "training": -16.510229495686833,
+        "held_out": -11.148447599407472
+      },
+      "OGLE": {
+        "training": -2.8183521399352713,
+        "held_out": 7.8910632327257355
+      }
+    },
+    "worst": [
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.555,
+        "single_z": 2.5035512016744725,
+        "binary_z": -56.6233914930965,
+        "delta": -3199.9406955610675
+      },
+      {
+        "instrument": "KMTS",
+        "reduced_hjd": 7561.45785,
+        "single_z": -1.76776733348979,
+        "binary_z": -4.307249025210748,
+        "delta": -15.427392819825336
+      },
+      {
+        "instrument": "KMTS",
+        "reduced_hjd": 7561.41478,
+        "single_z": -1.625098157108309,
+        "binary_z": -4.076511964619883,
+        "delta": -13.97700577745223
+      },
+      {
+        "instrument": "KMTS",
+        "reduced_hjd": 7561.57318,
+        "single_z": -2.6579935411655797,
+        "binary_z": -4.29646430394949,
+        "delta": -11.394675850234234
+      },
+      {
+        "instrument": "KMTS",
+        "reduced_hjd": 7561.3328,
+        "single_z": -2.023447173760976,
+        "binary_z": -3.930211089382275,
+        "delta": -11.352220742102126
+      },
+      {
+        "instrument": "KMTS",
+        "reduced_hjd": 7561.53349,
+        "single_z": -1.6111699616719093,
+        "binary_z": -3.570222798899153,
+        "delta": -10.150622188385439
+      },
+      {
+        "instrument": "KMTS",
+        "reduced_hjd": 7561.63267,
+        "single_z": -2.929923761498068,
+        "binary_z": -4.021094381207062,
+        "delta": -7.584746774384016
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7561.55598,
+        "single_z": -0.3291549381630459,
+        "binary_z": -2.167465935817711,
+        "delta": -4.589565609613026
+      },
+      {
+        "instrument": "KMTS",
+        "reduced_hjd": 7561.2963,
+        "single_z": -0.14474821984539848,
+        "binary_z": -2.0169598806202433,
+        "delta": -4.047175112883215
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.60259,
+        "single_z": 2.8307214282204507,
+        "binary_z": 3.282181026855219,
+        "delta": -2.759728488861951
+      }
+    ]
+  },
+  "2026": {
+    "delta_train": 0.10536098779084568,
+    "delta_test": -5.252313556627087,
+    "binary_converged": true,
+    "instruments": {
+      "KMTA": {
+        "training": -0.4779762653568909,
+        "held_out": 0.1108086249422514
+      },
+      "KMTC": {
+        "training": -2.1968235232739586,
+        "held_out": -9.056688617419827
+      },
+      "KMTS": {
+        "training": 3.090675215029889,
+        "held_out": 1.8762740221959084
+      },
+      "MOA": {
+        "training": -0.6374793227632503,
+        "held_out": 0.7745352784501843
+      },
+      "OGLE": {
+        "training": 0.32696488415453656,
+        "held_out": 1.0427571352047404
+      }
+    },
+    "worst": [
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.69216,
+        "single_z": 4.675515862858754,
+        "binary_z": 4.845711022454487,
+        "delta": -1.6204667292930672
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.88843,
+        "single_z": 4.9356772227762855,
+        "binary_z": 5.05999646217782,
+        "delta": -1.2426545498194308
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.8451,
+        "single_z": 4.413193631414712,
+        "binary_z": 4.550951086559806,
+        "delta": -1.2348777639005029
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.8105,
+        "single_z": 3.252470631807765,
+        "binary_z": 3.3919578221998874,
+        "delta": -0.9268126568110002
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.76602,
+        "single_z": 3.6166673050239573,
+        "binary_z": 3.7339419414086836,
+        "delta": -0.862040026581596
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.60259,
+        "single_z": 2.811634978816051,
+        "binary_z": 2.9523994832829787,
+        "delta": -0.8113714547876647
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.555,
+        "single_z": 2.4821088181039848,
+        "binary_z": 2.6344615240561766,
+        "delta": -0.7795233368228329
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.73041,
+        "single_z": 3.7823971547782502,
+        "binary_z": 3.878350706647734,
+        "delta": -0.735075967280375
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.64541,
+        "single_z": 1.0386985348516935,
+        "binary_z": 1.1345660609654697,
+        "delta": -0.20834550039164745
+      },
+      {
+        "instrument": "MOA",
+        "reduced_hjd": 7580.837308,
+        "single_z": 2.45331531211353,
+        "binary_z": 2.4813891354875204,
+        "delta": -0.13853602106479634
+      }
+    ]
+  },
+  "2027": {
+    "delta_train": 121.70905586740264,
+    "delta_test": -67.04822093273879,
+    "binary_converged": true,
+    "instruments": {
+      "KMTA": {
+        "training": -7.337433497968688,
+        "held_out": 0.6164024488237725
+      },
+      "KMTC": {
+        "training": 70.53070002898305,
+        "held_out": -91.02881238777886
+      },
+      "KMTS": {
+        "training": 35.366913614370745,
+        "held_out": 19.324485999770996
+      },
+      "MOA": {
+        "training": 20.370303958818944,
+        "held_out": 1.3340386767434314
+      },
+      "OGLE": {
+        "training": 2.7785717631976072,
+        "held_out": 2.705664329702143
+      }
+    },
+    "worst": [
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.69216,
+        "single_z": 4.631378368574965,
+        "binary_z": 6.271111130429673,
+        "delta": -17.87716921729482
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.8451,
+        "single_z": 4.383984480792492,
+        "binary_z": 5.550954722014295,
+        "delta": -11.593778398023389
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.88843,
+        "single_z": 4.9109925179267,
+        "binary_z": 5.921036610908052,
+        "delta": -10.940827036581478
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.555,
+        "single_z": 2.4366976149493538,
+        "binary_z": 4.029873108002966,
+        "delta": -10.302381999905617
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.60259,
+        "single_z": 2.7714715571018207,
+        "binary_z": 4.208233102232217,
+        "delta": -10.028171250898598
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.8105,
+        "single_z": 3.2213887441436166,
+        "binary_z": 4.441269148141717,
+        "delta": -9.347526205340262
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.76602,
+        "single_z": 3.58890987229778,
+        "binary_z": 4.655075068817513,
+        "delta": -8.789449824849903
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.73041,
+        "single_z": 3.758630240110215,
+        "binary_z": 4.656670261184294,
+        "delta": -7.557276639527226
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.64541,
+        "single_z": 1.0125100468826942,
+        "binary_z": 1.9661798635206136,
+        "delta": -2.840686660675543
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7550.689,
+        "single_z": -1.9801529575430945,
+        "binary_z": -2.397707483682864,
+        "delta": -1.8279954420421478
+      }
+    ]
+  },
+  "seed_2027_kmtc_window": {
+    "hours": 8.002319999992324,
+    "observations": [
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.555,
+        "single_z": 2.4366976149493538,
+        "binary_z": 4.029873108002966,
+        "delta": -10.302381999905617
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.60259,
+        "single_z": 2.7714715571018207,
+        "binary_z": 4.208233102232217,
+        "delta": -10.028171250898598
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.64541,
+        "single_z": 1.0125100468826942,
+        "binary_z": 1.9661798635206136,
+        "delta": -2.840686660675543
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.69216,
+        "single_z": 4.631378368574965,
+        "binary_z": 6.271111130429673,
+        "delta": -17.87716921729482
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.73041,
+        "single_z": 3.758630240110215,
+        "binary_z": 4.656670261184294,
+        "delta": -7.557276639527226
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.76602,
+        "single_z": 3.58890987229778,
+        "binary_z": 4.655075068817513,
+        "delta": -8.789449824849903
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.8105,
+        "single_z": 3.2213887441436166,
+        "binary_z": 4.441269148141717,
+        "delta": -9.347526205340262
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.8451,
+        "single_z": 4.383984480792492,
+        "binary_z": 5.550954722014295,
+        "delta": -11.593778398023389
+      },
+      {
+        "instrument": "KMTC",
+        "reduced_hjd": 7560.88843,
+        "single_z": 4.9109925179267,
+        "binary_z": 5.921036610908052,
+        "delta": -10.940827036581478
+      }
+    ]
+  }
+}

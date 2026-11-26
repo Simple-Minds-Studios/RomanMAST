@@ -1,0 +1,5 @@
+# E003 point-source evidence
+
+Three fold-0 reports, six optimizer histories, three execution logs and the pilot residual plot. The uploaded tarball SHA-256 is `c1a1b9b1a53c63d8ad43b720f839a46be4808a8505280c6fd1702a8a244852ab`. All 13 extracted files matched the bartOS originals byte for byte before preparation. The public copy removes the local home-directory prefix from each execution log. The source tarball retains the original logs. The reports record NumPy 2.5.5, SciPy 1.18.1 and MulensModel 3.12.0. Source catalog attribution is in [NOTICE.md](../../../examples/public_data/data/NOTICE.md).
+
+Run `python3 verify_archive.py` in this directory to recompute the residual diagnostics in `archive_summary.json`. Positive Δχ² favors the binary fit. Every run lost predictive accuracy on fold 0. The subtotal for seed 2027 excluding KMTC is about +23.98 and uses the original fit. The nine-point KMTC sequence spans approximately eight hours. These are retrospective diagnostics. The optimizer histories are generation-best records and do not support exact restart.
