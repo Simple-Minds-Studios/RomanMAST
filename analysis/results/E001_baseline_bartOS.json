@@ -1,0 +1,43 @@
+{
+  "input_sha256": "774fc45ce972846c7d9b4b184092513b138fdd13f6ac71edb42d2e4794b0ccc2",
+  "event": "OGLE-2016-BLG-1093",
+  "python": "3.12.16",
+  "numpy": "2.5.5",
+  "scipy": "1.18.1",
+  "results": {
+    "A": {
+      "t0": 7560.260326373974,
+      "u0": 0.011528590161809004,
+      "te": 53.49009382254177,
+      "chi2": 1168.0418465087403,
+      "n": 1368,
+      "converged_starts": 9,
+      "total_starts": 9,
+      "boundary": false,
+      "model": "PSPL, nonnegative source and blend flux; no parallax"
+    },
+    "B": {
+      "t0": 7560.353537576509,
+      "u0": 0.021173297361551647,
+      "te": 55.16440303286739,
+      "chi2": 3086.6233717916593,
+      "n": 2868,
+      "converged_starts": 9,
+      "total_starts": 9,
+      "boundary": false,
+      "model": "PSPL, nonnegative source and blend flux; no parallax"
+    },
+    "C": {
+      "t0": 7560.358026394673,
+      "u0": 0.021210607069861845,
+      "te": 55.134545325009235,
+      "chi2": 12947.598734277975,
+      "n": 10692,
+      "converged_starts": 9,
+      "total_starts": 9,
+      "boundary": false,
+      "model": "PSPL, nonnegative source and blend flux; no parallax"
+    }
+  },
+  "limitations": "Input hash identifies supplied JSON, not original catalog. Exploratory fits only; no uncertainty, held-out comparison, binary lens or parallax. Nonnegative blend constraint may bias estimates."
+}
