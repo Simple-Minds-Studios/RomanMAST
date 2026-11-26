@@ -1,0 +1,5 @@
+# Initial baseline dependencies; lock exact versions after validation.
+numpy
+scipy
+matplotlib
+pytest
