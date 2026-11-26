@@ -1,0 +1,3 @@
+# E002 initial results (2026-11-26)
+
+Executed local robustness.py on recovered input. A/B/C original crossing times 53.490096,55.164404,55.134546 days; rescaled 53.490096,55.557880,55.390009. Combined residual RMS: KMTA .659626, KMTC 1.114047, KMTS 1.316826, MOA 1.122594, OGLE .933597. Adjacent time-ordered residual correlations respectively .033574,.214890,.368204,.216806,.025877. Synthetic truth (2,.2,35); mean (2.00113419,.19970525,35.06604856); sample SD (.00935756,.00322696,.40851353). These are descriptive results, not real-event confidence intervals. Rescaling is in-sample and does not establish improved prediction. Original catalog verification pending. No main branch changes.
