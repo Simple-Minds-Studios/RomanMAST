@@ -1,0 +1,77 @@
+{
+  "injections": [
+    {
+      "injection": 1,
+      "blind_passes": 0,
+      "blind_runs": 4
+    },
+    {
+      "injection": 2,
+      "blind_passes": 0,
+      "blind_runs": 4
+    },
+    {
+      "injection": 3,
+      "blind_passes": 0,
+      "blind_runs": 4
+    }
+  ],
+  "nulls": [
+    {
+      "seed": 41,
+      "flagged": false,
+      "delta": {
+        "training_chi2": 0.7873742161152677,
+        "holdout_chi2": -0.16683659352634095
+      }
+    },
+    {
+      "seed": 107,
+      "flagged": false,
+      "delta": {
+        "training_chi2": 5.830330805703966,
+        "holdout_chi2": -2.4364549895841776
+      }
+    },
+    {
+      "seed": 211,
+      "flagged": false,
+      "delta": {
+        "training_chi2": -0.5117545994930879,
+        "holdout_chi2": 0.9662326343755581
+      }
+    },
+    {
+      "seed": 311,
+      "flagged": false,
+      "delta": {
+        "training_chi2": 1.9866249874745563,
+        "holdout_chi2": -0.7139817325401054
+      }
+    },
+    {
+      "seed": 419,
+      "flagged": false,
+      "delta": {
+        "training_chi2": 0.9587103826638668,
+        "holdout_chi2": 1.2867049315448753
+      }
+    },
+    {
+      "seed": 521,
+      "flagged": false,
+      "delta": {
+        "training_chi2": 5.505115650519315,
+        "holdout_chi2": -2.3600863364305553
+      }
+    }
+  ],
+  "false_positive_screen": {
+    "positives": 0,
+    "assessed": 6,
+    "exact_95pct_interval": [
+      0.0,
+      0.4592581264399005
+    ]
+  }
+}

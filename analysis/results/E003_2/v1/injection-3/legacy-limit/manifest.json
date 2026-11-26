@@ -1,0 +1,132 @@
+{
+  "configured": {
+    "injection": 3,
+    "noise_seed": 3329,
+    "noise_fraction": 0.015,
+    "cadence_strides": [
+      1,
+      30
+    ],
+    "max_nfev": [
+      30,
+      100
+    ],
+    "holdout": [
+      7585,
+      7587
+    ],
+    "ftol": 1e-06,
+    "diff_step": 0.0001
+  },
+  "effective": {
+    "bounds": [
+      [
+        7550.0,
+        7570.0
+      ],
+      [
+        0.0001,
+        0.3
+      ],
+      [
+        10.0,
+        200.0
+      ],
+      [
+        -6.0,
+        -1.0
+      ],
+      [
+        -0.5228787452803376,
+        0.47712125471966244
+      ],
+      [
+        0.0,
+        360.0
+      ],
+      [
+        -5.0,
+        -1.5228787452803376
+      ]
+    ],
+    "runs": {
+      "historical-full": {
+        "dataset": {
+          "sha256": "5e83b6e8465052ae959a991468cf18154613022fc57eee84843dc54fa8820eb2",
+          "training_n": 10661,
+          "holdout_n": 31,
+          "per_instrument": {
+            "KMTA": {
+              "n": 294,
+              "training_n": 289
+            },
+            "KMTC": {
+              "n": 657,
+              "training_n": 647
+            },
+            "KMTS": {
+              "n": 549,
+              "training_n": 545
+            },
+            "MOA": {
+              "n": 7824,
+              "training_n": 7812
+            },
+            "OGLE": {
+              "n": 1368,
+              "training_n": 1368
+            }
+          }
+        },
+        "evaluations": [
+          30,
+          35
+        ]
+      },
+      "historical-reduced": {
+        "dataset": {
+          "sha256": "5375eb37bde7eb0b8845ad94afaef8e0f8210ccc85d326c6b05040229e1e6509",
+          "training_n": 358,
+          "holdout_n": 0,
+          "per_instrument": {
+            "KMTA": {
+              "n": 10,
+              "training_n": 10
+            },
+            "KMTC": {
+              "n": 22,
+              "training_n": 22
+            },
+            "KMTS": {
+              "n": 19,
+              "training_n": 19
+            },
+            "MOA": {
+              "n": 261,
+              "training_n": 261
+            },
+            "OGLE": {
+              "n": 46,
+              "training_n": 46
+            }
+          }
+        },
+        "evaluations": [
+          30,
+          35
+        ]
+      }
+    }
+  },
+  "implementation": {
+    "reproduce_injection3_limit.py": "5044e09039fa9fb8fef56e5767e78b07150f813ef5e69fe70fc7f96143b1d05c",
+    "run_controls.py": "5dc12f33c7180aa19881221900e9af644393c15dc9e0515aaeb1ec0c32108259",
+    "structured_recovery.py": "d3cfab5592c3cec37d988ea878e3a2243b23da72345355309729f6f74b878d7c",
+    "binary_search.py": "14a1729ebfad16a38999200b2cf64a00932002722f77791b9725b4d89efb2a05",
+    "synthetic_validation.py": "abd5019225a2dd4fb050a61b879760209c6066e4e57b7b6f503bc56136bec101"
+  },
+  "sources": {
+    "catalog_sha256": "774fc45ce972846c7d9b4b184092513b138fdd13f6ac71edb42d2e4794b0ccc2",
+    "frozen_settings_sha256": "e9e6e79f271cb4e9c608d0f37e0ae59e9defe8c33a7171f7f31b003a83403013"
+  }
+}

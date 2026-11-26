@@ -1,0 +1,373 @@
+{
+  "configured": {
+    "protocol_version": "E003.2-v1",
+    "noise_seed": 3329,
+    "noise_fraction": 0.015,
+    "reduced_stride": 30,
+    "historical_holdout": [
+      7585,
+      7587
+    ],
+    "dense_center": 7560,
+    "dense_outer_days": 90,
+    "dense_outer_count": 181,
+    "dense_inner_days": 3,
+    "dense_inner_count": 601,
+    "dense_holdout_stride": 5,
+    "source_flux": 0.6,
+    "blend_flux": 0.4,
+    "global_seeds": [
+      761,
+      1439
+    ],
+    "global_generations": [
+      5,
+      20
+    ],
+    "population_multiplier": 4,
+    "profile_offsets_in_tolerances": [
+      -2,
+      -1,
+      0,
+      1,
+      2
+    ],
+    "profile_local_evaluations": 16,
+    "injection_3_evaluations": [
+      30,
+      100
+    ],
+    "predictive_equivalence_rms_sigma": 0.05,
+    "null_seeds": [
+      41,
+      107,
+      211,
+      311,
+      419,
+      521
+    ],
+    "null_training_improvement_threshold": 25,
+    "null_holdout_improvement_threshold": 0
+  },
+  "effective": {
+    "bounds": [
+      [
+        7550.0,
+        7570.0
+      ],
+      [
+        0.0001,
+        0.3
+      ],
+      [
+        10.0,
+        200.0
+      ],
+      [
+        -6.0,
+        -1.0
+      ],
+      [
+        -0.5228787452803376,
+        0.47712125471966244
+      ],
+      [
+        0.0,
+        360.0
+      ],
+      [
+        -5.0,
+        -1.5228787452803376
+      ]
+    ],
+    "dense_n": 775,
+    "injection_count": 3
+  },
+  "sources": {
+    "cadence_sha256": "774fc45ce972846c7d9b4b184092513b138fdd13f6ac71edb42d2e4794b0ccc2",
+    "frozen_settings_sha256": "e9e6e79f271cb4e9c608d0f37e0ae59e9defe8c33a7171f7f31b003a83403013",
+    "legacy_settings_sha256": "698fe4b6f76f88fac7596e544e0e4bf283382583a71aa4e6f3f5152afa8f7ef3"
+  },
+  "implementation": {
+    "synthetic_validation.py": "abd5019225a2dd4fb050a61b879760209c6066e4e57b7b6f503bc56136bec101",
+    "binary_search.py": "14a1729ebfad16a38999200b2cf64a00932002722f77791b9725b4d89efb2a05",
+    "structured_recovery.py": "d3cfab5592c3cec37d988ea878e3a2243b23da72345355309729f6f74b878d7c"
+  },
+  "versions": {
+    "numpy": "2.5.5",
+    "scipy": "1.18.1",
+    "mulensmodel": "3.12.0"
+  },
+  "runtime": {
+    "benchmark_parallel_workers": 1
+  },
+  "datasets": {
+    "injection-1": {
+      "full": {
+        "sha256": "44b1fa3dd1c044efff8c9231ea15b3833041ffb8026d6b19180ffd81f84d8d71",
+        "training_n": 10661,
+        "holdout_n": 31,
+        "per_instrument": {
+          "KMTA": {
+            "n": 294,
+            "training_n": 289
+          },
+          "KMTC": {
+            "n": 657,
+            "training_n": 647
+          },
+          "KMTS": {
+            "n": 549,
+            "training_n": 545
+          },
+          "MOA": {
+            "n": 7824,
+            "training_n": 7812
+          },
+          "OGLE": {
+            "n": 1368,
+            "training_n": 1368
+          }
+        }
+      },
+      "reduced": {
+        "sha256": "4133f8453a274f0d1097487d6b9305025ba7908c119d05e7e143ca7674acfe6b",
+        "training_n": 358,
+        "holdout_n": 0,
+        "per_instrument": {
+          "KMTA": {
+            "n": 10,
+            "training_n": 10
+          },
+          "KMTC": {
+            "n": 22,
+            "training_n": 22
+          },
+          "KMTS": {
+            "n": 19,
+            "training_n": 19
+          },
+          "MOA": {
+            "n": 261,
+            "training_n": 261
+          },
+          "OGLE": {
+            "n": 46,
+            "training_n": 46
+          }
+        }
+      },
+      "dense": {
+        "sha256": "3a9d05edb79d6a1905c6cb99abb33bd0465ac8af0a14c3c6c9ce2b1c83f09235",
+        "training_n": 620,
+        "holdout_n": 155,
+        "per_instrument": {
+          "synthetic": {
+            "n": 775,
+            "training_n": 620
+          }
+        }
+      }
+    },
+    "injection-2": {
+      "full": {
+        "sha256": "58ae21690ff32676bbc18b027cd6c3fcecfa56fcce9b880d3b40239b03018fe3",
+        "training_n": 10661,
+        "holdout_n": 31,
+        "per_instrument": {
+          "KMTA": {
+            "n": 294,
+            "training_n": 289
+          },
+          "KMTC": {
+            "n": 657,
+            "training_n": 647
+          },
+          "KMTS": {
+            "n": 549,
+            "training_n": 545
+          },
+          "MOA": {
+            "n": 7824,
+            "training_n": 7812
+          },
+          "OGLE": {
+            "n": 1368,
+            "training_n": 1368
+          }
+        }
+      },
+      "reduced": {
+        "sha256": "6cd4c3a2ef2f526d0e96171c842ac4e42a702048b2b521e8acbe2c36929fb8a5",
+        "training_n": 358,
+        "holdout_n": 0,
+        "per_instrument": {
+          "KMTA": {
+            "n": 10,
+            "training_n": 10
+          },
+          "KMTC": {
+            "n": 22,
+            "training_n": 22
+          },
+          "KMTS": {
+            "n": 19,
+            "training_n": 19
+          },
+          "MOA": {
+            "n": 261,
+            "training_n": 261
+          },
+          "OGLE": {
+            "n": 46,
+            "training_n": 46
+          }
+        }
+      },
+      "dense": {
+        "sha256": "4f7025ea78b57efdc003c87ee8d1d1aa2860301a784543a99ddbae7cd71aa589",
+        "training_n": 620,
+        "holdout_n": 155,
+        "per_instrument": {
+          "synthetic": {
+            "n": 775,
+            "training_n": 620
+          }
+        }
+      }
+    },
+    "injection-3": {
+      "full": {
+        "sha256": "6932e82298b84af3684242e75244885196b37d25a3d91defc472ca30ea9c5d9e",
+        "training_n": 10661,
+        "holdout_n": 31,
+        "per_instrument": {
+          "KMTA": {
+            "n": 294,
+            "training_n": 289
+          },
+          "KMTC": {
+            "n": 657,
+            "training_n": 647
+          },
+          "KMTS": {
+            "n": 549,
+            "training_n": 545
+          },
+          "MOA": {
+            "n": 7824,
+            "training_n": 7812
+          },
+          "OGLE": {
+            "n": 1368,
+            "training_n": 1368
+          }
+        }
+      },
+      "reduced": {
+        "sha256": "55a20e440900fe6d68969f4a1b6963e55887d48a0fe7d78313d8eb700fee5d7f",
+        "training_n": 358,
+        "holdout_n": 0,
+        "per_instrument": {
+          "KMTA": {
+            "n": 10,
+            "training_n": 10
+          },
+          "KMTC": {
+            "n": 22,
+            "training_n": 22
+          },
+          "KMTS": {
+            "n": 19,
+            "training_n": 19
+          },
+          "MOA": {
+            "n": 261,
+            "training_n": 261
+          },
+          "OGLE": {
+            "n": 46,
+            "training_n": 46
+          }
+        }
+      },
+      "dense": {
+        "sha256": "081d524a92aa83fdd577a62c0f68dfa5eeb4de8996a2de252abc3c652a590ed4",
+        "training_n": 620,
+        "holdout_n": 155,
+        "per_instrument": {
+          "synthetic": {
+            "n": 775,
+            "training_n": 620
+          }
+        }
+      }
+    },
+    "null-seed41": {
+      "sha256": "e61bffa00af4b7f93375f0882ba6879d4c99c636371ea94e761c60d2023017fa",
+      "training_n": 620,
+      "holdout_n": 155,
+      "per_instrument": {
+        "synthetic": {
+          "n": 775,
+          "training_n": 620
+        }
+      }
+    },
+    "null-seed107": {
+      "sha256": "7a73443dccbb4be7d3d8b32d07bbdeedac9f076bdfe59dd85b09cecbb7603a1f",
+      "training_n": 620,
+      "holdout_n": 155,
+      "per_instrument": {
+        "synthetic": {
+          "n": 775,
+          "training_n": 620
+        }
+      }
+    },
+    "null-seed211": {
+      "sha256": "5373531be2466e145892afda951656f7dcc3a6e1cfa63059e67f3d7a895e0db5",
+      "training_n": 620,
+      "holdout_n": 155,
+      "per_instrument": {
+        "synthetic": {
+          "n": 775,
+          "training_n": 620
+        }
+      }
+    },
+    "null-seed311": {
+      "sha256": "8282d133f604d0ef456182c800cc17bd5684bcd31bf21434c959eac4617f4b35",
+      "training_n": 620,
+      "holdout_n": 155,
+      "per_instrument": {
+        "synthetic": {
+          "n": 775,
+          "training_n": 620
+        }
+      }
+    },
+    "null-seed419": {
+      "sha256": "427b671141b62e2763784b5f2e452d4044a851b911f7977fccedf8dd2cd611f1",
+      "training_n": 620,
+      "holdout_n": 155,
+      "per_instrument": {
+        "synthetic": {
+          "n": 775,
+          "training_n": 620
+        }
+      }
+    },
+    "null-seed521": {
+      "sha256": "f59b2f241085c23aa4213344a3f92117b77b52da5f2cf012d2c946e6370772ae",
+      "training_n": 620,
+      "holdout_n": 155,
+      "per_instrument": {
+        "synthetic": {
+          "n": 775,
+          "training_n": 620
+        }
+      }
+    }
+  }
+}
