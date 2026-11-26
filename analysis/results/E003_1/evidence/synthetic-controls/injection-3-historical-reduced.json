@@ -1,0 +1,152 @@
+{
+  "injection": 3,
+  "scenario": "historical-reduced",
+  "truth": [
+    7559.8,
+    0.025,
+    56.0,
+    -3.2,
+    0.23,
+    273.0,
+    -3.0
+  ],
+  "truth_training_chi2": 368.0185621917872,
+  "truth_by_instrument": {
+    "KMTA": {
+      "training_n": 10,
+      "held_out_n": 0,
+      "training_chi2": 2.454678823865503,
+      "held_out_chi2": null,
+      "flux": [
+        0.5836995587160667,
+        0.418282788638189
+      ]
+    },
+    "KMTC": {
+      "training_n": 22,
+      "held_out_n": 0,
+      "training_chi2": 30.476373785452196,
+      "held_out_chi2": null,
+      "flux": [
+        0.6096613259284418,
+        0.38482533764463017
+      ]
+    },
+    "KMTS": {
+      "training_n": 19,
+      "held_out_n": 0,
+      "training_chi2": 27.034000982941944,
+      "held_out_chi2": null,
+      "flux": [
+        0.593923651809433,
+        0.41517167683328093
+      ]
+    },
+    "MOA": {
+      "training_n": 261,
+      "held_out_n": 0,
+      "training_chi2": 260.18436583520827,
+      "held_out_chi2": null,
+      "flux": [
+        0.5990591352565008,
+        0.4011820777855326
+      ]
+    },
+    "OGLE": {
+      "training_n": 46,
+      "held_out_n": 0,
+      "training_chi2": 47.86914276431931,
+      "held_out_chi2": null,
+      "flux": [
+        0.5960888742504448,
+        0.4037490915031373
+      ]
+    }
+  },
+  "parameter_tolerances": [
+    0.25,
+    0.01,
+    10.0,
+    0.5,
+    0.12,
+    20.0,
+    0.7
+  ],
+  "local": {
+    "parameters": [
+      7559.791963058143,
+      0.02310781920946255,
+      56.05362612793923,
+      -3.520189356984856,
+      0.012670076320812046,
+      229.9304698313836,
+      -2.516107802134986
+    ],
+    "errors": [
+      0.008036941857426427,
+      0.0018921807905374517,
+      0.05362612793923205,
+      0.32018935698485596,
+      0.21732992367918796,
+      43.06953016861641,
+      0.48389219786501414
+    ],
+    "within_tolerances": false,
+    "objective": 362.23666657972944,
+    "success": false,
+    "message": "The maximum number of function evaluations is exceeded.",
+    "nfev": 30,
+    "by_instrument": {
+      "KMTA": {
+        "training_n": 10,
+        "held_out_n": 0,
+        "training_chi2": 2.625189237350936,
+        "held_out_chi2": null,
+        "flux": [
+          0.5834795235440289,
+          0.4180747798797833
+        ]
+      },
+      "KMTC": {
+        "training_n": 22,
+        "held_out_n": 0,
+        "training_chi2": 24.50916912717459,
+        "held_out_chi2": null,
+        "flux": [
+          0.6009243086153078,
+          0.39625183928430535
+        ]
+      },
+      "KMTS": {
+        "training_n": 19,
+        "held_out_n": 0,
+        "training_chi2": 25.23824049547926,
+        "held_out_chi2": null,
+        "flux": [
+          0.5982225689762272,
+          0.40839571810568875
+        ]
+      },
+      "MOA": {
+        "training_n": 261,
+        "held_out_n": 0,
+        "training_chi2": 261.8705317330683,
+        "held_out_chi2": null,
+        "flux": [
+          0.5972625719132892,
+          0.4030114739881172
+        ]
+      },
+      "OGLE": {
+        "training_n": 46,
+        "held_out_n": 0,
+        "training_chi2": 47.99353598665643,
+        "held_out_chi2": null,
+        "flux": [
+          0.5930900658992717,
+          0.4067590581809776
+        ]
+      }
+    }
+  }
+}

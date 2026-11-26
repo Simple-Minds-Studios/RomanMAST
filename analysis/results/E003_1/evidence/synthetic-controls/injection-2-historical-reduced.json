@@ -1,0 +1,152 @@
+{
+  "injection": 2,
+  "scenario": "historical-reduced",
+  "truth": [
+    7560.5,
+    0.035,
+    62.0,
+    -2.6,
+    0.04,
+    141.0,
+    -2.8
+  ],
+  "truth_training_chi2": 318.5723842375269,
+  "truth_by_instrument": {
+    "KMTA": {
+      "training_n": 10,
+      "held_out_n": 0,
+      "training_chi2": 9.723506019018409,
+      "held_out_chi2": null,
+      "flux": [
+        0.5962143515212256,
+        0.40844272132277215
+      ]
+    },
+    "KMTC": {
+      "training_n": 22,
+      "held_out_n": 0,
+      "training_chi2": 20.648881253331645,
+      "held_out_chi2": null,
+      "flux": [
+        0.5994805935629022,
+        0.3929782655062806
+      ]
+    },
+    "KMTS": {
+      "training_n": 19,
+      "held_out_n": 0,
+      "training_chi2": 15.818628277746477,
+      "held_out_chi2": null,
+      "flux": [
+        0.6022402027731653,
+        0.39809728291189717
+      ]
+    },
+    "MOA": {
+      "training_n": 261,
+      "held_out_n": 0,
+      "training_chi2": 227.64020387105018,
+      "held_out_chi2": null,
+      "flux": [
+        0.6044735836117894,
+        0.3965625654241109
+      ]
+    },
+    "OGLE": {
+      "training_n": 46,
+      "held_out_n": 0,
+      "training_chi2": 44.74116481638016,
+      "held_out_chi2": null,
+      "flux": [
+        0.586610611684253,
+        0.41714043844363174
+      ]
+    }
+  },
+  "parameter_tolerances": [
+    0.25,
+    0.01,
+    10.0,
+    0.5,
+    0.12,
+    20.0,
+    0.7
+  ],
+  "local": {
+    "parameters": [
+      7560.501708057438,
+      0.031821932154112206,
+      63.985591058349314,
+      -2.4840135908193197,
+      0.035857384702076944,
+      136.02218584118688,
+      -2.7203719842598684
+    ],
+    "errors": [
+      0.0017080574380088365,
+      0.003178067845887797,
+      1.9855910583493142,
+      0.11598640918068037,
+      0.0041426152979230565,
+      4.977814158813118,
+      0.07962801574013145
+    ],
+    "within_tolerances": true,
+    "objective": 309.67352611737977,
+    "success": true,
+    "message": "`ftol` termination condition is satisfied.",
+    "nfev": 26,
+    "by_instrument": {
+      "KMTA": {
+        "training_n": 10,
+        "held_out_n": 0,
+        "training_chi2": 9.357060532639855,
+        "held_out_chi2": null,
+        "flux": [
+          0.5714771998453456,
+          0.4292876514320645
+        ]
+      },
+      "KMTC": {
+        "training_n": 22,
+        "held_out_n": 0,
+        "training_chi2": 19.982344479457204,
+        "held_out_chi2": null,
+        "flux": [
+          0.5732562337805628,
+          0.4159921779466063
+        ]
+      },
+      "KMTS": {
+        "training_n": 19,
+        "held_out_n": 0,
+        "training_chi2": 12.468948322633507,
+        "held_out_chi2": null,
+        "flux": [
+          0.5702396754777068,
+          0.4299728509765677
+        ]
+      },
+      "MOA": {
+        "training_n": 261,
+        "held_out_n": 0,
+        "training_chi2": 223.5639017816583,
+        "held_out_chi2": null,
+        "flux": [
+          0.5772158883705553,
+          0.42370991708530054
+        ]
+      },
+      "OGLE": {
+        "training_n": 46,
+        "held_out_n": 0,
+        "training_chi2": 44.30127100099085,
+        "held_out_chi2": null,
+        "flux": [
+          0.560812542211873,
+          0.44282216493009297
+        ]
+      }
+    }
+  }
+}

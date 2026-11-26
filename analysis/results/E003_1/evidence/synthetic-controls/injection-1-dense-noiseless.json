@@ -1,0 +1,72 @@
+{
+  "injection": 1,
+  "scenario": "dense-noiseless",
+  "truth": [
+    7560.1,
+    0.021,
+    48.0,
+    -3.7,
+    -0.16,
+    51.0,
+    -3.1
+  ],
+  "truth_training_chi2": 1.7214080911625996e-24,
+  "truth_by_instrument": {
+    "synthetic": {
+      "training_n": 3261,
+      "held_out_n": 10,
+      "training_chi2": 1.7214080911625996e-24,
+      "held_out_chi2": 2.6253290925755273e-27,
+      "flux": [
+        0.6000000000000002,
+        0.3999999999999999
+      ]
+    }
+  },
+  "parameter_tolerances": [
+    0.25,
+    0.01,
+    10.0,
+    0.5,
+    0.12,
+    20.0,
+    0.7
+  ],
+  "local": {
+    "parameters": [
+      7560.1,
+      0.021,
+      48.0,
+      -3.7,
+      -0.16,
+      51.0,
+      -3.1
+    ],
+    "errors": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "within_tolerances": true,
+    "objective": 1.7214080911625996e-24,
+    "success": true,
+    "message": "`gtol` termination condition is satisfied.",
+    "nfev": 1,
+    "by_instrument": {
+      "synthetic": {
+        "training_n": 3261,
+        "held_out_n": 10,
+        "training_chi2": 1.7214080911625996e-24,
+        "held_out_chi2": 2.6253290925755273e-27,
+        "flux": [
+          0.6000000000000002,
+          0.3999999999999999
+        ]
+      }
+    }
+  }
+}
