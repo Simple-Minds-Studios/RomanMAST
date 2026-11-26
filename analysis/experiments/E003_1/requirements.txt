@@ -1,0 +1,8 @@
+astropy==8.0.3
+astropy-iers-data==0.2026.11.23.0.35.53
+matplotlib==3.11.2
+mulensmodel==3.12.0
+numpy==2.5.5
+pyerfa==2.0.1.5
+scipy==1.18.1
+VBMicrolensing==5.7
